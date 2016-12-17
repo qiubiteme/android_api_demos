@@ -20,7 +20,7 @@ ApiDemo非常全面的介绍了Android开发中常见的Api使用方式。比如
 ![p5](https://github.com/MaxQiuYang/android_api_demos/blob/master/pic/Screenshot_2016-12-17-14-25-20-505_com.example.an.png)
 ####Media
 #####多媒体相关的介绍。
-![p6](https://raw.githubusercontent.com/MaxQiuYang/android_api_demos/d4516b23bed4519532a50020cef056870cbc183f/pic/Screenshot_2016-12-17-14-29-50-183_com.example.an.png)
+![p6](https://github.com/MaxQiuYang/android_api_demos/blob/master/pic/Screenshot_2016-12-17-14-29-50-183_com.example.an.png?raw=true)
 ####NFC
 #####NFC开发也是越来越流行的，这里应该有你想要的。
 ![p7](https://github.com/MaxQiuYang/android_api_demos/blob/master/pic/Screenshot_2016-12-17-14-32-20-875_com.example.an.png)
