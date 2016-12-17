@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+ 演示了使用LinearLayout背景组相关
+两个、edittext和按钮。-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- 标签/按钮文本字段。 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+
+        <!--
+            TextView标签就在左边。
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/linear_layout_10_from"
+            android:textColor="#A3A4A6"
+
+        />
+
+        <!--
+            EditText之间。
+        -->
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:textColor="#2B2C2F"
+            android:background="@null"
+        />
+
+        <!--
+            按钮在右边。
+        -->
+        <ImageButton
+            style="@android:style/Widget.Button.Inset"
+            android:src="@android:drawable/star_big_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_marginBottom="2dip"
+            android:padding="10dip"
+        />
+
+    </LinearLayout>
+
+    <!--
+    底部标签/按钮的文本字段。(与上面相同
+除了标签。)
+         -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+
+        <!--
+          TextView标签就在左边。
+          android:textColor="?android:attr/textColorSecondary"
+          android:textAppearance="?android:attr/textAppearanceLargeInverse"
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/linear_layout_10_to"
+            android:textColor="#A3A4A6"
+
+        />
+
+        <!--
+            EditText之间。
+        -->
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#2B2C2F"
+            android:singleLine="true"
+            android:background="@null"
+        />
+
+        <!--
+            按钮在右边。
+        -->
+        <ImageButton
+            style="@android:style/Widget.Button.Inset"
+            android:src="@android:drawable/star_big_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_marginBottom="2dip"
+            android:padding="10dip"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

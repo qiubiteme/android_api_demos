@@ -1,0 +1,2066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="activity_sample_code">API Demos</string>
+
+    <!-- =============================== -->
+    <!--  app/activity examples strings-应用程序/活动的例子字符串  -->
+    <!-- =============================== -->
+
+    <!-- The "color" attribute is an alias for "fgcolor" and was introduced in API level 18 -“颜色”属性是“BGCOLOR”的别名，并在API级别18中引入.  -->
+    <string name="styled_12_hour_clock">MM/
+        <font color="red">
+            <b>dd</b>
+        </font>
+        /yy h
+        <font color="#ffff0000">
+            <sup>
+                <small>mm</small>
+            </sup>
+        </font>
+        <b>aa</b>
+    </string>
+    <string name="styled_24_hour_clock">MM/
+        <font color="red">
+            <b>dd</b>
+        </font>
+        /yy k
+        <font color="#ffff0000">
+            <sup>
+                <small>mm</small>
+            </sup>
+        </font>
+    </string>
+
+    <string name="styled_12_hour_clock2">\'Custom font:\'
+        <font color="@android:color/primary_text_holo_dark" face="sans-serif-thin">MM/dd/yy h:mm
+            aa
+        </font>
+    </string>
+    <string name="styled_24_hour_clock2">\'Custom font:\'
+        <font color="@android:color/primary_text_holo_dark" face="sans-serif-thin">MM/dd/yy k:mm
+        </font>
+    </string>
+
+    <string name="tabs_1_tab_1">tab1</string>
+    <string name="tabs_1_tab_2">tab2</string>
+    <string name="tabs_1_tab_3">tab3</string>
+
+    <string name="activity_hello_world">App/Activity/
+        <b>activity Hello
+            <i>World 例子</i>
+        </b>
+    </string>
+    <string name="hello_world">
+        <b>Hello,
+            <i>World!</i>
+        </b>
+    </string>
+
+    <string name="activity_dialog">App/Activity/Dialog对话框</string>
+    <string name="dialog_activity_text">你如何使用实例
+                Theme.Dialog主题进行，看起来像一个活动
+                 对话。它也有很多的文字来说明如何文本换行（和
+                相应窗口的大小调整）可以在对话发生。
+    </string>
+    <string name="dialog_activity_add">添加内容</string>
+    <string name="dialog_activity_remove">删除内容</string>
+    <string name="activity_custom_dialog">App/Activity/Custom Dialog自定义对话框</string>
+    <string name="custom_dialog_activity_text">你如何使用实例
+                定制Theme.Dialog主题进行，看起来像一个活动
+                自定义对话框，在这里有一个丑陋的框架。
+    </string>
+
+    <string name="activity_overscan">App/Activity/Activity-Overscan边框</string>
+
+    <string name="quick_contacts_demo">App/Activity/QuickContactsDemo快速联系人演示</string>
+
+    <string name="activity_wallpaper">App/Activity/Wallpaper墙纸</string>
+    <string name="activity_setwallpaper">App/Activity/SetWallpaper设置壁纸</string>
+    <string name="set_wallpaper">Set Wallpaper设置壁纸</string>
+    <string name="randomize">Randomize随机化</string>
+
+    <string name="activity_screen_orientation">App/Activity/Screen Orientation-屏幕方向</string>
+    <string name="screen_orientation_summary">演示可用屏幕
+                定位模式。通常你要设置所需的模式在你的清单
+                而不是编程。
+    </string>
+    <string name="screen_orientation">Screen Orientation屏幕方向</string>
+
+    <string name="activity_translucent">App/Activity/Translucent-半透明Activity</string>
+    <string name="translucent_background">你如何做出了榜样
+                活动有一个半透明的背景下，在合成
+                无论是它的后面。
+    </string>
+
+    <string name="activity_translucent_blur">App/Activity/Translucent Blur 半透明 背景模糊activity</string>
+
+    <string name="activity_animation">App/Activity/Activity进入切换动画Animation</string>
+    <string name="activity_animation_msg">Press a button to launch an activity with a custom
+        animation.按一个按钮来使用自定义启动一个活动
+                 动画。
+    </string>
+    <string name="activity_animation_fade">淡入Fade in</string>
+    <string name="activity_animation_zoom">放大Zoom in</string>
+    <string name="activity_modern_animation_fade">现代褪色Modern fade in</string>
+    <string name="activity_modern_animation_zoom">现代放大Modern zoom in</string>
+    <string name="activity_scale_up_animation">放大Scale up</string>
+    <string name="activity_zoom_thumbnail_animation">缩略图放大Thumbnail zoom</string>
+    <string name="activity_no_animation">无动画No Animation</string>
+
+    <string name="activity_save_restore">App/Activity/Save &amp; Restore State保存 ＆;恢复状态</string>
+    <string name="save_restore_msg">Demonstration of saving and restoring activity state in
+        节能示范和恢复活动状态
+        onSaveInstanceState() and onCreate().
+    </string>
+    <string name="saves_state">该文本字段保存它的状态：This text field saves its state:</string>
+    <string name="no_saves_state">该文本字段不保存它的状态：This text field does not save its state:</string>
+    <string name="initial_text">初始文本。Initial text.</string>
+
+    <string name="soft_input_modes">App/Activity/Soft Input Modes软键盘输入的模式</string>
+    <string name="soft_input_modes_summary">显示了如何不同的软输入方式的影响
+                应用，由于到输入法调整。
+    </string>
+    <string name="soft_input_modes_label">Resize mode:调整方式：</string>
+    <string name="soft_input_modes_content">This is a part of the application\'s UI that
+        can resize to adjust for the IME.这是一个可以调整调整为一次应用程序\的用户界面的一部分。
+    </string>
+    <string name="soft_input_modes_initial_text">Text editor.\n\nTap to show the IME,
+        which will cause this window to resize as requested.文本编辑器。\ n\ n轻触来显示图像，这将导致调整该窗口的要求。
+    </string>
+
+    <string name="activity_persistent">App/Activity/Persistent State持久状态</string>
+    <string name="persistent_msg">Demonstration of persistent activity state with持续性活动状态的示范
+        getPreferences(0).edit() and getPreferences(0).
+    </string>
+
+    <string name="activity_recreate">App/Activity/Recreate重新创建</string>
+    <string name="activity_recreate_msg">重新创建示范活动，有
+                它与重建新显著的变化。在这种情况下，主题改变。
+    </string>
+    <string name="recreate">重新创建</string>
+
+    <string name="activity_finish_affinity">App/Activity/Finish Affinity结束Activity</string>
+
+    <string name="activity_receive_result">App/Activity/Receive Result -- Activity
+        之间的数据传递交互
+    </string>
+    <string name="pick_result">选择一个结果发送，或BACK取消。</string>
+    <string name="corky">Corky科基</string>
+    <string name="violet">Violet紫色</string>
+
+    <string name="activity_forwarding">App/Activity/Forwarding-Activity转场动画</string>
+    <string name="forwarding">按按钮前进到下一个活动。这项活动
+                会停止，所以你不会再看到它回来的时候。Press the button to go forward to the next activity. This
+        activity
+        will stop, so you will no longer see it when going back.
+    </string>
+    <string name="go">Go</string>
+    <string name="forward_target">按后退按钮并注意我们没有看到前面的活动。Press back button and notice we don\'t see the
+        previous
+        activity.
+    </string>
+
+    <string name="activity_redirect">App/Activity/Redirection 重定向</string>
+    <string name="redirect_enter">按下按钮，启动例子。接下来的活动将
+                有条件地重定向到另一个活动从用户收集数据。
+        Press the button to start the example. The next activity will
+        conditionally redirect to another activity to collect data from the user.
+    </string>
+    <string name="redirect_main">您现在看到的主要活动，因为用户正常运行
+                文本已被设置为：
+        You now see the main activity running normally because the user
+        text has been set to:
+    </string>
+    <string name="clear_text">清除并退出Clear and Exit</string>
+    <string name="new_text">新文本New Text</string>
+    <string name="redirect_getter">输入将由主要活动中使用的文字。按返回
+                 取消。Enter the text that will be used by the main activity. Press back
+        to cancel.
+    </string>
+    <string name="apply">应用Apply</string>
+
+    <string name="activity_presentation">App/Activity/Presentation -Activity介绍</string>
+    <string name="presentation_activity_text">本活动演示了如何使用
+                介绍和DISPLAYMANAGER显示其他内容的显示。\n
+                尝试连接一个辅助显示，看会发生什么。\n
+                选择显示打开就可以了演示。
+        This activity demonstrates how to use a
+        Presentation and the DisplayManager to show content on other Displays.\n
+        Try connecting a secondary display and watch what happens.\n
+        Selecting a Display will open a Presentation on it.
+    </string>
+    <string name="presentation_show_all_displays">显示全部Show all displays</string>
+    <string name="presentation_photo_text">显示上展出＃％2 $ d张照片＃％1 $ D：％3$ S。Showing photo #%1$d on
+        display #%2$d: %3$s.
+    </string>
+    <string name="presentation_info_text">信息Info</string>
+    <string name="presentation_display_id_text">显示＃％1 $ D：％2 $ SDisplay #%1$d: %2$s</string>
+    <string name="presentation_alert_info_text">显示＃％1$ d个信息Display #%1$d Info</string>
+    <string name="presentation_alert_dismiss_text">OK</string>
+
+    <string name="activity_presentation_with_media_router">App/Activity/Presentation with Media
+        Router-Activity介绍与媒体路由器
+    </string>
+    <string name="presentation_with_media_router_activity_text">本活动演示了如何
+                自动使用演示和MediaRouter到
+                可用时基于当前显示在副显示器上的内容
+                所选的媒体路线。\n
+                尝试连接一个辅助显示，看会发生什么。This activity demonstrates how to
+        use a Presentation and the MediaRouter to automatically
+        show content on a secondary display when available based on the currently
+        selected media route.\n
+        Try connecting a secondary display and watch what happens.
+    </string>
+    <string name="presentation_with_media_router_play_on">播放...Play on...</string>
+    <string name="presentation_with_media_router_now_playing_locally">现在玩主显示器上
+                \“％S\'。Now playing on main display
+        \'%s\'.
+    </string>
+    <string name="presentation_with_media_router_now_playing_remotely">现在玩中学
+                显示\'％s的\'。Now playing on secondary
+        display \'%s\'.
+    </string>
+
+    <string name="activity_secure_window">App/Activity/Secure Surfaces安全页面不允许截屏/Secure
+        Window安全窗口，不允许截屏
+    </string>
+    <string name="secure_window_activity_text">本活动演示了如何创建活动
+                使用安全的表面，其内容只能在安全显示可见。
+                活动\的窗口已经被打上FLAG_SECURE，使之使用安全的表面上。
+                因此，活动的内容将不会出现在屏幕截图并不会
+                镜像到非安全的显示器。\n
+                \n
+                我是一个安全的活动！This activity demonstrates how to make an activity
+        use a secure surface so that its contents will only be visible on secure displays.
+        The activity\'s window has been marked with FLAG_SECURE to make it use a secure surface.
+        Consequently, the contents of the activity will not appear in screenshots and will not
+        be mirrored to non-secure displays.\n
+        \n
+        I am a secure activity!
+    </string>
+
+    <string name="activity_secure_dialog">App/Activity/Secure Surfaces安全页面不允许截屏/Secure
+        Dialog安全对话框
+    </string>
+    <string name="secure_dialog_activity_text">本活动演示了如何创建一个对话框使用
+                一个安全的表面，其内容只能在安全显示可见。
+                对话框\的窗口已经被打上FLAG_SECURE，使之使用安全的表面上。
+                因此，对话的内容将不会出现在屏幕截图并不会
+                镜像到非安全的显示器。This activity demonstrates how to make a dialog use
+        a secure surface so that its contents will only be visible on secure displays.
+        The dialog\'s window has been marked with FLAG_SECURE to make it use a secure surface.
+        Consequently, the contents of the dialog will not appear in screenshots and will not
+        be mirrored to non-secure displays.
+    </string>
+    <string name="secure_dialog_show_button">显示安全对话Show secure dialog</string>
+    <string name="secure_dialog_dialog_text">我是一个安全的对话！I am a secure dialog!</string>
+
+    <string name="activity_secure_surface_view">App/Activity/Secure Surfaces安全页面不允许截屏/Secure Surface
+        View安全的显示View
+    </string>
+    <string name="secure_surface_view_activity_text">本次活动展示了如何使
+                SurfaceView使用安全表面，使得它的内容将只对可见
+                安全的显示器。
+                表面视图\的窗口已取得安全使用setSecure（真），使其使用
+                一个安全的表面。因此，表面视图的内容将不会出现在
+                屏幕截图和将不被镜像到非安全的显示器。This activity demonstrates how to make a
+        SurfaceView use a secure surface so that its contents will only be visible on
+        secure displays.
+        The surface view\'s window has been made secure using setSecure(true) to make it use
+        a secure surface. Consequently, the contents of the surface view will not appear in
+        screenshots and will not be mirrored to non-secure displays.
+    </string>
+
+    <string name="fragment_alert_dialog">App/Fragment/Alert Dialog-警报对话框</string>
+
+    <string name="fragment_arguments">App/Fragment/Arguments接收参数片段</string>
+    <string name="fragment_arguments_msg">演示接受参数片段
+                在运行时（右），或从属性在布局（左）包。Demonstrates a fragment that takes arguments
+        as a Bundle at runtime (on the right) or from attributes in a layout (on the left).
+    </string>
+    <string name="fragment_arguments_embedded">从属性From Attributes</string>
+    <string name="fragment_arguments_embedded_land">仅景观Landscape Only</string>
+
+    <string name="fragment_arguments_fragment_msg">演示两个嵌入式片段是实例化的参数。Demonstrates two embedded
+        fragments
+        that are instantiated with arguments.
+    </string>
+
+    <string name="fragment_custom_animations">App/Fragment/Custom Animations片段压栈自定义动画</string>
+
+    <string name="fragment_hide_show">App/Fragment/Hide and Show片段显示隐藏</string>
+
+    <string name="fragment_context_menu">App/Fragment/Context Menu片段上下文菜单</string>
+    <string name="fragment_context_menu_msg">片段填充背景
+                 菜单;长按按钮来查看。Fragment populating a context
+        menu; long press the button to see.
+    </string>
+    <string name="long_press">长按我Long press me</string>
+
+    <string name="fragment_dialog">App/Fragment/Dialog片段对话框</string>
+    <string name="show">显示Show</string>
+
+    <string name="fragment_dialog_or_activity">App/Fragment/Dialog or
+        Activity片段对话框或activity
+    </string>
+    <string name="fragment_dialog_or_activity_msg">
+        演示同一片段
+        被示出为一个对话和嵌入的活性的内侧。Demonstrates the same fragment
+        being shown as a dialog and embedded inside of an activity.
+    </string>
+    <string name="fragment_dialog_or_activity_inline">片段嵌入到
+                活性：Fragment embedded inside
+        of the activity:
+    </string>
+
+    <string name="fragment_layout">App/Fragment/Layout片段布局</string>
+
+    <string name="fragment_list_array">App/Fragment/List Array片段列表数组</string>
+
+    <string name="fragment_menu">App/Fragment/Menu片段菜单</string>
+    <string name="fragment_menu_msg">从两个片段构建菜单，允许
+                你隐藏他们删除他们..Build menus from two fragments, allowing
+        you to hide them to remove them..
+    </string>
+    <string name="fragment1menu">显示片段1菜单Show fragment 1 menu</string>
+    <string name="fragment2menu">显示片段2菜单Show fragment 2 menu</string>
+
+    <string name="fragment_nesting_tabs">App/Fragment/Nesting Tabs片段嵌套的标签</string>
+
+    <string name="fragment_retain_instance">App/Fragment/Retain Instance片段保留实例</string>
+    <string name="fragment_retain_instance_msg">保留片段的当前进展情况;
+                重新启动如果重新创建片段。Current progress of retained fragment;
+        restarts if fragment is re-created.
+    </string>
+    <string name="restart">重新开始</string>
+
+    <string name="fragment_receive_result">App/Fragment/Receive Result片段接收结果</string>
+
+    <string name="fragment_stack">App/Fragment/Stack片段堆栈</string>
+    <string name="new_fragment">推Push</string>
+    <string name="delete_fragment">抛出Pop</string>
+
+    <string name="first">第一First</string>
+    <string name="last">最后Last</string>
+
+    <string name="fragment_tabs">App/Fragment/Tabs片段标签</string>
+
+    <string name="loader_cursor">App/Loader加载/Cursor加载光标</string>
+
+    <string name="loader_retained">App/Loader加载/Retained加载保存</string>
+
+    <string name="loader_custom">App/Loader加载/Custom 自定义加载</string>
+
+    <string name="loader_throttle">App/Loader加载/Throttle延迟加载</string>
+
+    <string name="activity_menu">App/Activity/Menu</string>
+    <string name="open_menu">打开菜单Open menu</string>
+    <string name="close_menu">关闭菜单Close menu</string>
+    <string name="toggle_scenery">切换风光Toggle scenery</string>
+    <string name="toggle_dogs">切换狗Toggle dogs</string>
+    <string name="long_click_for_context_menu">长按点击右键菜单Long click for context menu</string>
+
+    <string name="local_service_started">本地服务已启动Local service has started</string>
+    <string name="local_service_stopped">本地服务已停止Local service has stopped</string>
+    <string name="local_service_label">本地服务例子Sample Local Service</string>
+
+    <string name="activity_local_service_controller">App/Service/Local Service
+        Controller-Activity的本地服务控制器
+    </string>
+    <string name="local_service_controller">这说明如何实现持续性
+                         可以启动并根据需要停止。
+        This demonstrates how you can implement persistentservices that
+        may be started and stopped as desired.
+    </string>
+    <string name="start_service">开启服务Start Service</string>
+    <string name="stop_service">停止服务Stop Service</string>
+
+    <string name="activity_local_service_binding">App/Service/Local Service
+        Binding-Activity与服务绑定
+    </string>
+    <string name="local_service_binding">这表明你怎么可以用一个持续连接
+                 服务。请注意如何它会自动启动为您，并且玩的
+                这和本地服务控制器之间的交互。
+        This demonstrates how you can connect with a persistent
+        service. Notice how it automatically starts for you, and play around with the
+        interaction between this and Local Service Controller.
+    </string>
+    <string name="bind_service">绑定服务Bind Service</string>
+    <string name="unbind_service">解除绑定服务Unbind Service</string>
+    <string name="local_service_connected">连接到本地服务Connected to local service</string>
+    <string name="local_service_disconnected">从本地服务断开Disconnected from local service</string>
+
+    <string name="activity_messenger_service_binding">App/Service/Messenger Service远程服务</string>
+    <string name="messenger_service_binding">这表明你如何与沟通
+                使用Messenger的远程服务。This demonstrates how you can communicate with
+        a remote service using Messenger.
+    </string>
+
+    <string name="remote_service_started">远程服务已启动Remote service has started</string>
+    <string name="remote_service_stopped">远程服务已停止Remote service has stopped</string>
+    <string name="remote_service_label">示例远程服务Sample Remote Service</string>
+
+    <string name="activity_remote_service_controller">App/Service/Remote Service
+        Controller远程服务控制
+    </string>
+    <string name="remote_service_controller">
+        这说明如何实现持续性
+                服务于一个单独的进程可以被启动，并根据需要停止运行。This demonstrates how you can implement persistent
+        services running in a separate process that may be started and stopped as desired.
+    </string>
+
+    <string name="activity_remote_service_binding">App/Service/Remote Service
+        Binding远程服务绑定控制
+    </string>
+    <string name="remote_service_binding">这表明你怎么可以用一个持续连接
+                服务于另一个进程中运行。使用kill按钮来查看时，会发生什么
+                该进程崩溃。This demonstrates how you can connect with a persistent
+        service running in another process. Use the kill button to see what happens when
+        the process crashes.
+    </string>
+
+    <string name="kill_process">终止进程Kill Process</string>
+    <string name="remote_service_connected">连接到远程服务Connected to remote service</string>
+    <string name="remote_service_disconnected">从远程服务断开Disconnected from remote service</string>
+    <string name="remote_service_unbind_disconn">解除绑定由于断开Unbinding due to disconnect</string>
+    <string name="remote_call_failed">失败调用远程服务Failure calling remote service</string>
+
+    <string name="activity_remote_service_binding_options">App/Service/Remote Service Binding
+        Options远程服务绑定选项
+    </string>
+
+    <string name="service_start_arguments_label">示例服务启动参数Sample Service Start Arguments
+    </string>
+
+    <string name="activity_service_start_arguments_controller">App/Service/Service
+        Start Arguments Controller服务启动参数控制器
+    </string>
+    <string name="service_start_arguments_controller">这表明如何
+                服务可以带参数启动，并运行，直到所有参数都 处理。\n
+        This demonstrates how service can be started with
+        arguments, and run until
+        all arguments are
+        processed.
+    </string>
+
+    <string name="start1_service">启动Start \"One\" 没有重新提交no redeliver</string>
+    <string name="start2_service">启动Start \"Two\" 没有重新提交no redeliver</string>
+    <string name="start3_service">启动Start \"Three\" w/重新提交redeliver</string>
+    <string name="startfail_service">开始传递失败Start failed delivery</string>
+    <string name="service_created">服务创建Service created.</string>
+    <string name="service_destroyed">服务被毁。Service destroyed.</string>
+
+    <string name="foreground_service_started">服务是在前台Service is in the foreground</string>
+    <string name="foreground_service_label">样品前景服务Sample Foreground Service</string>
+
+    <string name="activity_foreground_service_controller">App/Service/Foreground Service
+        Controller前台服务控制器
+    </string>
+    <string name="foreground_service_controller">这表明，你怎么能
+                落实在需要的时候在前台运行的服务。This demonstrates how you can
+        implement services that run in the foreground when needed.
+    </string>
+    <string name="start_service_foreground">启动前台服务Start Service Foreground</string>
+    <string name="start_service_background">启动后台服务Start Service Background</string>
+
+    <string name="activity_isolated_service_controller">App/Service/Isolated Service
+        Controller-隔离服务控制器
+    </string>
+    <string name="isolated_service_controller">这证明了采用Android的：isolatedProcess
+                提供服务。有两种服务，其中可以独立地控制; 他们会
+                在自己独立的进程每次运行This demonstrates the use of android:isolatedProcess
+        with services. There are two services, which can be independently controlled; they will
+        each run in their own isolated process
+    </string>
+
+    <string name="start_service_1">启动服务1Start Service 1</string>
+    <string name="stop_service_1">停止服务1Stop Service 1</string>
+    <string name="bind_service_1">绑定服务1Bind Service 1</string>
+    <string name="start_service_2">启动服务2Start Service 2</string>
+    <string name="stop_service_2">一站式服务2Stop Service 2</string>
+    <string name="bind_service_2">绑定服务2Bind Service 2</string>
+    <string name="isolated_service_1_started">隔离服务1已开始Isolated service 1 has started</string>
+    <string name="isolated_service_1_stopped">隔离服务1已停止Isolated service 1 has stopped</string>
+    <string name="isolated_service_1_label">例子中分离服务1Sample Isolated Service 1</string>
+
+    <string name="one_shot_received">的一次性闹钟已经熄灭The one-shot alarm has gone off</string>
+    <string name="repeating_received">的重复闹钟已经熄灭The repeating alarm has gone off</string>
+
+    <string name="activity_alarm_controller">App/Alarm警报/Alarm Controller报警控制器</string>
+    <string name="alarm_controller">这表明如何安排和处理
+                一次性和重复报警。This demonstrates how to schedule and handle
+        one-shot and repeating alarms.
+    </string>
+    <string name="one_shot_alarm">单次闹钟One Shot Alarm</string>
+    <string name="start_repeating_alarm">开始重复报警Start Repeating Alarm</string>
+    <string name="stop_repeating_alarm">停止重复报警Stop Repeating Alarm</string>
+    <string name="one_shot_scheduled">一次性闹钟会根据30秒熄灭
+                实时时钟。尝试在此之前改变当前的时间！One-shot alarm will go off in 30 seconds based on
+        the real time clock. Try changing the current time before then!
+    </string>
+    <string name="repeating_scheduled">重复报警器将在15秒熄灭，每15秒的基础上经过的实时时钟后
+        Repeating alarm will go off in 15 seconds and
+        every 15 seconds after based on the elapsed realtime clock
+    </string>
+
+    <string name="repeating_unscheduled">重复报警已不定期Repeating alarm has been unscheduled</string>
+
+    <string name="alarm_service_started">报警服务已开始运行The alarm service has started running</string>
+    <string name="alarm_service_finished">报警服务已经运行完毕The alarm service has finished running</string>
+    <string name="alarm_service_label">例子报警服务Sample Alarm Service</string>
+
+    <string name="activity_alarm_service">App/Alarm警报/Alarm Service报警服务</string>
+    <string name="alarm_service">这表明如何安排重复
+                报警，将通过服务发起长寿命操作。This demonstrates how to schedule a repeating
+        alarm that will initiate a long-lived operation through a service.
+    </string>
+    <string name="start_alarm_service">启动报警服务 Start Alarm Service</string>
+    <string name="stop_alarm_service">停止报警服务Stop Alarm Service</string>
+    <string name="alarm_service_scheduled">报警服务将立即运行，然后每
+                30秒15秒Alarm service will run now, and then every
+        30 seconds for 15 seconds
+    </string>
+    <string name="alarm_service_unscheduled">报警服务已改期Alarm service has been unscheduled</string>
+
+    <!--表盘例子-->
+    <string name="activity_local_sample">App/Instrumentation/Local Sample</string>
+    <string name="local_sample">这表明，对运行一个仪表
+                我们自己的类之一。请注意，此活动将被打死
+                在其自己的应用程序启动的仪器的一个副作用。This demonstrates an Instrumentation that runs against
+        one of our own classes. Note that this activity will be killed as
+        a side-effect of starting instrumentation on its own application.
+    </string>
+
+    <string name="activity_contacts_filter">App/Instrumentation/Contacts Filter</string>
+    <string name="contacts_filter">这表明一个仪器包
+                启动联系人列表，并模拟用户的事件进行过滤。This demonstrates an Instrumentation package that
+        launches the contacts list and simulates user events to filter it.
+    </string>
+
+    <string name="pick_image_label">App/Activity/PickImage</string>
+    <string name="pick_image">选择图片Pick Image</string>
+
+    <string name="short_notification_text">Short notification</string>
+    <string name="long_notification_text">这是一个长期的通知。你看，你可能需要第二
+                更多阅读。This is a long notification. See, you might need a second
+        more to read it.
+    </string>
+    <string name="status_bar_notification_title">示例通知Sample Notification</string>
+
+    <string name="notifying_service_controller">这项服务将更新状态栏通知
+                每5秒钟一分钟This service will update a status bar notification
+        every 5 seconds for a minute
+    </string>
+
+    <string name="activity_custom_title">App/Activity/Custom Title</string>
+    <string name="custom_title_left">Left is best</string>
+    <string name="custom_title_right">Right is always right</string>
+    <string name="custom_title_left_button">Change Left</string>
+    <string name="custom_title_right_button">Change Right</string>
+
+    <string name="activity_reorder">App/Activity/Reorder Activities之间的跳转</string>
+    <string name="reorder_on_launch">这是第四活动序列。上的一个按钮
+                第四将使用Intent.FLAG_ACTIVITY_REORDER_TO_FRONT标志带来的第二
+                的活动历史堆栈的前面。在此之后，通过继续进行回
+                历史应该与新最前面的第二重排序活动开始，然后是四，
+                第三和最后的第一个。This is the first of a sequence of four Activities. A button on
+        the fourth will use the Intent.FLAG_ACTIVITY_REORDER_TO_FRONT flag to bring the second of
+        the activities to the front of the history stack. After that, proceeding back through the
+        history should begin with the newly-frontmost second reorder activity, then the fourth, the
+        third, and finally the first.
+    </string>
+    <string name="reorder_launch_two">进入第二Go to the second</string>
+    <string name="reorder_two_text">这是在四个活动的序列的第二This is the second in a sequence of four
+        Activities.
+    </string>
+    <string name="reorder_launch_three">进入第三Go to the third</string>
+    <string name="reorder_three_text">这是四个活动序列的三分之一。This is the third of a sequence of four
+        Activities.
+    </string>
+    <string name="reorder_launch_four">进入第四Go to the fourth</string>
+    <string name="reorder_four_text">
+        这是最后的四个活动的序列This is the last in a sequence of four Activities.
+    </string>
+    <string name="reorder_second_to_front">带来正面第二Bring the second in front</string>
+
+    <string name="activity_rotation_animation">App/Activity/Rotation Animation旋转动画</string>
+
+    <string name="menu_from_xml_title">App/Menu-菜单/Inflate from XML以XML方式，设置菜单</string>
+    <string name="menu_from_xml_instructions_press_menu">选择一个菜单资源，然后按菜单
+                 键。Select a menu resource and press the menu
+        key.
+    </string>
+    <string name="menu_from_xml_instructions_go_back">如果你想选择其他菜单资源，
+                回去重新运行该活动。If you want to choose another menu resource,
+        go back and re-run this activity.
+    </string>
+
+    <string name="voice_recognition">App/Voice Recognition-语音识别</string>
+    <string name="supported_languages">支持的语言Supported languages</string>
+    <string name="language_preference">语音搜索的设置Voice Search in Settings</string>
+
+    <string name="text_to_speech">App/Text-To-Speech-文字转语音</string>
+    <string name="again">再次Again</string>
+
+    <string name="app_update_received">API演示已更新！ApiDemos has been updated!</string>
+
+    <!-- ============================== -->
+    <!--  应用/内容的例子字符串app/content examples strings  -->
+    <!-- ============================== -->
+
+    <string name="activity_clipboard">Content/Clipboard/数据类型Data Types</string>
+    <string name="copy_text">复制文本Copy Text</string>
+    <string name="copy_intent">意图复制Copy Intent</string>
+    <string name="copy_uri">复制URI-Copy URI</string>
+    <string name="clip_type_prompt">夹式Clip Type</string>
+
+    <string name="activity_external_storage">Content/Storage/外置储存External Storage</string>
+    <string name="create">创建Create</string>
+    <string name="delete">删除Delete</string>
+
+    <string name="activity_styled_text">Content/Resources/
+        <i>样式文本Styled</i>
+        <b>Text</b>
+    </string>
+    <string name="styled_text_rsrc">从资源初始化：Initialized from a resource:</string>
+
+    <string name="styled_text">平原Plain,<b>粗体bold</b>,<i>斜体italic</i>,
+        <b>
+            <i>粗体斜体bold-italic</i>
+        </b>
+    </string>
+    <string name="styled_text_prog">编程分配Assigned programmatically:</string>
+
+    <string name="activity_text_undo">Content/解开Undo</string>
+    <string name="text_undo_default_edit_msg">TextView中使用默认控制-Z撤销的行为。TextView with the default Control-Z undo behavior.
+    </string>
+    <string name="text_undo_set_text">设置文本SetText</string>
+    <string name="text_undo_append_text">附加Append</string>
+    <string name="text_undo_insert_text">插Insert</string>
+    <string name="text_undo_undo_disabled_msg">TextView中具有撤销禁用。TextView with undo disabled.</string>
+    <string name="text_undo_length_limit_msg">TextView中有长度限制输入过滤。TextView with a length limit InputFilter.</string>
+    <string name="text_undo_credit_card_msg">用TextWatcher文本信用卡输入字段。Credit card input field with a
+        TextWatcher.</string>
+
+    <string name="activity_resources_layout_reference">Content/Resources/布局参考Layout Reference</string>
+    <string name="resources_layout_reference_description">演示如何编写布局
+                资源引用，这样就可以定义多种不同配置
+                引用一个实际的XML定义的布局的资源。Shows how to write layout
+        resource references, so that you can define multiple different configurations of
+        a layout resource that refer to one actual XML definition.
+    </string>
+    <string name="resources_layout_reference_default">默认布局Default layout</string>
+    <string name="resources_layout_reference_tablet">表格布局Tablet layout</string>
+
+    <string name="activity_resources_width_and_height">Content/Resources/宽度和高度Width and Height</string>
+    <string name="resources_width_and_height_description">使用下面的-wNNNdp布局和
+                -hNNNdp根据屏幕的大小不同的版本之间进行选择。The layouts below use -wNNNdp and
+        -hNNNdp to select between different versions based on the size of the screen.
+    </string>
+
+    <string name="activity_resources_smallest_width">Content/Resources/最小宽度Smallest Width</string>
+    <string name="resources_smallest_width_description">下面使用-swNNNdp布局
+                根据屏幕的大小不同的版本之间进行选择。The layouts below use -swNNNdp
+        to select between different versions based on the size of the screen.
+    </string>
+
+    <string name="activity_read_asset">Content/Assets/阅读资产Read Asset</string>
+
+    <string name="activity_themes">Content/Resources/主题Themes</string>
+    <string name="activity_resources">Content/Resources/资源Resources</string>
+
+    <string name="activity_pick_contact">Content/Provider/选择联系人Pick Contact</string>
+    <string name="pick_contact_msg">调用联系人挑选各种
+                联系人数据。这些都不需要调用者持有
+                READ_CONTACTS许可。Invoke Contacts to pick various kinds of
+        contact data. None of these require that the caller hold the
+        READ_CONTACTS permission.
+    </string>
+
+    <string name="pick_contact">选择一个联系人Pick a Contact</string>
+    <string name="pick_person">选择一个人Pick a Person</string>
+    <string name="pick_phone">选择一个电话Pick a Phone</string>
+    <string name="pick_address">选择一个地址Pick an Address</string>
+
+    <string name="activity_share_content">Content/Provider/分享内容Share Content</string>
+    <string name="share_content_msg">通过授予访问共享应用程序的私有数据
+                在其内容提供商特定的URI。Share private data of the app by granting access
+        to a specific URI in its content provider.
+    </string>
+    <string name="share_image">分享图片Share Image</string>
+
+    <string name="activity_changed_contact">Content/Provider/更改历史Changed Contacts</string>
+
+    <string name="activity_install_apk">Content/Packages/安装Install Apk</string>
+
+    <string name="ir_send">发送Send IR</string>
+    <string name="ir_get_freqs">获取运营商Get Carrier Frequencies</string>
+
+    <string name="activity_documents">Content/Storage/文件Documents</string>
+
+    <!-- ============================== -->
+    <!--  app/intents examples strings应用程序/意图的例子字符串     -->
+    <!-- ============================== -->
+
+    <string name="activity_intents">App/Activity/Intents意图</string>
+    <string name="intents">开展各种意图的例子。Example of launching various Intents.</string>
+    <string name="get_music">获得音乐 Get Music</string>
+    <string name="get_image">获取图像Get Image</string>
+    <string name="get_stream">获取流Get Stream</string>
+
+    <!-- ============================== -->
+    <!--  app/intents activity flags examples strings 应用程序/意图活动标志的例子字符串     -->
+    <!-- ============================== -->
+
+    <string name="activity_intent_activity_flags">App/Activity/Intent Activity Flags意图标志</string>
+    <string name="intent_activity_flags">使用各种意图的活动标志的例子。Example of the use of various intent
+        activity flags.
+
+    </string>
+    <string name="flag_activity_clear_task">意图修改堆栈FLAG_ACTIVITY_CLEAR_TASK</string>
+    <string name="flag_activity_clear_task_pi">意图修改堆栈FLAG_ACTIVITY_CLEAR_TASK (PI)</string>
+
+    <!-- =================================== -->
+    <!--  app/notification examples strings应用程序/通知范例字符串  -->
+    <!-- =================================== -->
+
+
+    <string name="short_notification">短信通知Short notification.</string>
+    <string name="long_notification">长通知Long notification.</string>
+    <string name="short_top_notification">短期顶部Short top.</string>
+    <string name="short_bottom_notification">短期底部Short bottom.</string>
+    <string name="short_center_notification">短信中心Short center.</string>
+    <string name="short_left_notification">短左侧Short left.</string>
+    <string name="short_right_notification">短的权利Short right.</string>
+    <string name="custom_notification">自定义通知Custom Notification:</string>
+    <string name="custom_notification_button">一个按钮With a Button</string>
+
+    <string name="status_bar_notifications_icons_only">只有图标Icons only</string>
+    <string name="status_bar_notifications_icons_and_marquee">图标和滚动字幕Icons and marquee</string>
+    <string name="status_bar_notifications_remote_views">使用远程视图的气球Use remote views in balloon
+    </string>
+    <string name="status_bar_notifications_defaults">使用默认值适用Use default values where applicable
+    </string>
+    <string name="status_bar_notifications_happy">:-)</string>
+    <string name="status_bar_notifications_ok">:-|</string>
+    <string name="status_bar_notifications_sad">:-(</string>
+
+    <string name="status_bar_notifications_happy_message">我很高兴I am happy</string>
+    <string name="status_bar_notifications_ok_message">我确定I am ok</string>
+    <string name="status_bar_notifications_sad_message">我伤心I am sad</string>
+    <string name="status_bar_notifications_clear">清除通知Clear notification</string>
+    <string name="status_bar_notifications_mood_title">心情环Mood ring</string>
+    <string name="status_bar_notifications_default_sound">声音Sound</string>
+    <string name="status_bar_notifications_default_vibrate">振动Vibrate</string>
+    <string name="status_bar_notifications_default_all">所有All</string>
+
+
+    <!-- ============================== -->
+    <!--  应用程序/对话框的例子字符串 app/dialog examples strings  -->
+    <!-- ============================== -->
+
+    <string name="activity_alert_dialog">App/Alert Dialogs对话框例子</string>
+    <string name="alert_dialog_two_buttons">无标题可选对话框</string>
+    <string name="alert_dialog_two_buttons_old_school">老样式对话框
+    </string>
+    <string name="alert_dialog_two_buttons_holo_light">白色，无标题老样式对话框
+    </string>
+    <string name="alert_dialog_two_buttons_default_light">材料设计样式对话框
+    </string>
+    <string name="alert_dialog_two_buttons_default_dark">主题默认样式对话框
+    </string>
+    <string name="alert_dialog_two_buttons2">带标题的长文本对话框</string>
+    <string name="alert_dialog_two_buttons2ultra">带标题，超长消息对话框</string>
+    <string name="alert_dialog_select_button">list对话框</string>
+    <string name="alert_dialog_single_choice">单选对话框</string>
+    <string name="alert_dialog_multi_choice">多项选择对话框</string>
+    <string name="alert_dialog_multi_choice_cursor">联系人选择对话框</string>
+    <string name="alert_dialog_progress_button">进度条对话框</string>
+    <string name="alert_dialog_progress_spinner_button">进度微调对话框</string>
+    <string name="alert_dialog_text_entry">文本输入对话框</string>
+    <string name="alert_dialog_username">Name:</string>
+    <string name="alert_dialog_password">Password:</string>
+    <string name="alert_dialog_two_buttons_title">
+        没有标题的对话框
+    </string>
+    <string name="alert_dialog_two_buttons_msg">标题头</string>
+    <string name="alert_dialog_two_buttons2_msg">
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg
+    </string>
+    <string name="alert_dialog_two_buttons2ultra_msg">
+        Plloaso鲭NUTO siwuf cakso dodtos ANR一库普
+                cupy UF CAK vux noaw yerw phuno。 Whag schengos，UF电子联邦公司，quiel
+                巴玛达苏otrenzr。\ n \ nSwipontgwook proudgs HUS YAG苏巴dagarmidad。
+                PLASA马库NOGA wipont trenzsa schengos耳鼻喉科KAAP zux comy。\ n \ nWipont TRENZ
+                kipg NAAR mixent PHONA。 CAK pwico siructiun
+                南京理工大学ruous apoply TYU CAK Uhex sisulutiun munityuw UW DSEG \ n \ n
+                Plloaso鲭NUTO siwuf cakso dodtos ANR一库普
+                cupy UF CAK vux noaw yerw phuno。 Whag schengos，UF电子联邦公司，quiel
+                巴玛达苏otrenzr。\ n \ nSwipontgwook proudgs HUS YAG苏巴dagarmidad。
+                PLASA马库NOGA wipont trenzsa schengos耳鼻喉科KAAP zux comy。\ n \ nWipont TRENZ
+                kipg NAAR mixent PHONA。 CAK pwico siructiun
+                南京理工大学ruous apoply TYU CAK Uhex sisulutiun munityuw UW DSEG \ n \ n
+                Plloaso鲭NUTO siwuf cakso dodtos ANR一库普
+                cupy UF CAK vux noaw yerw phuno。 Whag schengos，UF电子联邦公司，quiel
+                巴玛达苏otrenzr。\ n \ nSwipontgwook proudgs HUS YAG苏巴dagarmidad。
+                PLASA马库NOGA wipont trenzsa schengos耳鼻喉科KAAP zux comy。\ n \ nWipont TRENZ
+                kipg NAAR mixent PHONA。 CAK pwico siructiun
+                南京理工大学ruous apoply TYU CAK Uhex sisulutiun munityuw UW DSEG \ n \ n
+                Plloaso鲭NUTO siwuf cakso dodtos ANR一库普
+                cupy UF CAK vux noaw yerw phuno。 Whag schengos，UF电子联邦公司，quiel
+                巴玛达苏otrenzr。\ n \ nSwipontgwook proudgs HUS YAG苏巴dagarmidad。
+                PLASA马库NOGA wipont trenzsa schengos耳鼻喉科KAAP zux comy。\ n \ nWipont TRENZ
+                kipg NAAR mixent PHONA。 CAK pwico siructiun
+                南京理工大学ruous apoply TYU CAK Uhex sisulutiun munityuw UW DSEG \ n \ n
+                Plloaso鲭NUTO siwuf cakso dodtos ANR一库普
+                cupy UF CAK vux noaw yerw phuno。 Whag schengos，UF电子联邦公司，quiel
+                巴玛达苏otrenzr。\ n \ nSwipontgwook proudgs HUS YAG苏巴dagarmidad。
+                PLASA马库NOGA wipont trenzsa schengos耳鼻喉科KAAP zux comy。\ n \ nWipont TRENZ
+                kipg NAAR mixent PHONA。 CAK pwico siructiun
+                南京理工大学ruous apoply TYU CAK Uhex sisulutiun munityuw UW DSEG \ n \ n
+                Plloaso鲭NUTO siwuf cakso dodtos ANR一库普
+                cupy UF CAK vux noaw yerw phuno。 Whag schengos，UF电子联邦公司，quiel
+                巴玛达苏otrenzr。\ n \ nSwipontgwook proudgs HUS YAG苏巴dagarmidad。
+                PLASA马库NOGA wipont trenzsa schengos耳鼻喉科KAAP zux comy。\ n \ nWipont TRENZ
+                kipg NAAR mixent PHONA。 CAK pwico siructiun
+                南京理工大学ruous apoply TYU CAK Uhex sisulutiun munityuw UW DSEG \ n \ n
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
+        Plloaso mako nuto siwuf cakso dodtos anr koop a
+        cupy uf cak vux noaw yerw phuno. Whag schengos, uf efed, quiel
+        ba mada su otrenzr.\n\nSwipontgwook proudgs hus yag su ba dagarmidad.
+        Plasa maku noga wipont trenzsa schengos ent kaap zux comy.\n\nWipont trenz
+        kipg naar mixent phona. Cak pwico siructiun
+        ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
+    </string>
+    <string name="alert_dialog_ok">确认</string>
+    <string name="alert_dialog_hide">隐藏Hide</string>
+    <string name="alert_dialog_something">某物Something</string>
+    <string name="alert_dialog_cancel">取消</string>
+    <string name="alert_dialog_progress_text1">34
+        <xliff:g id="percent">%</xliff:g>
+    </string>
+    <string name="alert_dialog_progress_text2">145/305 KB</string>
+
+    <string name="select_dialog">标题头</string>
+    <string name="select_dialog_show">Lins对话框</string>
+
+
+    <!-- ============================== -->
+    <!--  应用程序/菜单的例子字符串 -app/menu examples strings     -->
+    <!-- ============================== -->
+
+    <string name="last_most_often">最近最常Last most often</string>
+    <string name="middle_most_often">中东最常Middle most often</string>
+    <string name="first_most_often">首先最常First most often</string>
+    <string name="last_least_often">最后往往至少Last least often</string>
+    <string name="middle_least_often">中东至少经常Middle least often</string>
+    <string name="first_least_often">首先至少经常First least often</string>
+    <string name="item_1">Item 1</string>
+    <string name="item_2">Item 2</string>
+    <string name="item_3">Item 3</string>
+    <string name="browser_visibility">浏览器的知名度Browser visibility</string>
+    <string name="browser_refresh">刷新Refresh</string>
+    <string name="browser_bookmark">收藏Bookmark</string>
+    <string name="email_visibility">电子邮件知名度Email visibility</string>
+    <string name="email_reply">回复Reply</string>
+    <string name="email_forward">转发Forward</string>
+    <string name="jump">跳Jump</string>
+    <string name="dive">潜水Dive</string>
+
+
+    <!-- ============================== -->
+    <!--  应用程序/菜单的例子字符串 app/menu examples strings     -->
+    <!-- ============================== -->
+
+    <string name="preferences_from_xml">Preference/1. Preferences from XM-从XML首选L</string>
+    <string name="launching_preferences">Preference/2. Launching preferences--启动首选项</string>
+    <string name="preference_dependencies">Preference/3. Preference dependencies-偏好的依赖</string>
+    <string name="default_values">Preference/4. Default values-默认值</string>
+    <string name="preferences_from_code">Preference/5. Preferences from code从代码中首</string>
+    <string name="advanced_preferences">Preference/6. Advanced preferences-高级偏好</string>
+    <string name="fragment_preferences">Preference/7. Fragment分段</string>
+    <string name="preference_with_headers">Preference/8. Headers-头</string>
+    <string name="switch_preference">Preference/9. Switch-开关</string>
+
+    <string name="launch_preference_activity">启动偏好Launch PreferenceActivity</string>
+    <string name="counter_value_is">计数器的值是The counter value is</string>
+
+    <string name="inline_preferences">在行首In-line preferences</string>
+    <string name="dialog_based_preferences">基于对话框的喜好-Dialog-based preferences</string>
+    <string name="launch_preferences">启动首选项Launch preferences</string>
+    <string name="preference_attributes">偏好属性-Preference attributes</string>
+
+    <string name="title_checkbox_preference">复选框偏好Checkbox preference</string>
+    <string name="summary_checkbox_preference">这是一个复选框-This is a checkbox</string>
+
+    <string name="title_switch_preference">开关偏好Switch preference</string>
+    <string name="summary_switch_preference">这是一个开关This is a switch</string>
+    <string name="summary_switch_preference_yes_no">这是自定义文本的开关This is a switch with custom text</string>
+
+    <string name="title_yesno_preference">是或否偏好Yes or no preference</string>
+    <string name="summary_yesno_preference">使用一个是/否对话框的例子An example that uses a yes/no dialog</string>
+    <string name="dialog_title_yesno_preference">你喜欢吃香蕉Do you like bananas?</string>
+
+    <string name="title_edittext_preference">编辑文本首选Edit text preference</string>
+    <string name="summary_edittext_preference">使用一个EditText对话的例子-An example that uses an edit
+        text dialog</string>
+    <string name="dialog_title_edittext_preference">输入您最喜欢的动物Enter your favorite animal</string>
+
+    <string name="title_list_preference">清单偏好List preference</string>
+    <string name="summary_list_preference">使用一个列表对话框的例子An example that uses a list dialog</string>
+    <string name="dialog_title_list_preference">选一个Choose one</string>
+
+    <string name="title_screen_preference">屏幕偏好-Screen preference</string>
+    <string name="summary_screen_preference">显示喜好的另一个屏幕Shows another screen of preferences</string>
+
+    <string name="title_fragment_preference">片段偏好Fragment preference</string>
+    <string name="summary_fragment_preference">显示喜好的另一片段Shows another fragment of preferences</string>
+
+    <string name="title_next_screen_toggle_preference">切换偏好Toggle preference</string>
+    <string name="summary_next_screen_toggle_preference">偏好那就是下一个屏幕上，但在同一层次Preference that is on
+        the next screen but same hierarchy
+    </string>
+
+    <string name="title_intent_preference">意向偏好Intent preference</string>
+    <string name="summary_intent_preference">从意向启动一个Activity-Launches an Activity from an
+        Intent</string>
+
+    <string name="title_my_preference">我的喜好My preference</string>
+    <string name="summary_my_preference">这是一个自定义计数器偏好This is a custom counter preference</string>
+
+    <string name="title_advanced_toggle_preference">闹鬼的偏好Haunted preference</string>
+    <string name="summary_on_advanced_toggle_preference">我上线了！I\'m on! :)</string>
+    <string name="summary_off_advanced_toggle_preference">我下线了I\'m off! :(</string>
+
+    <string name="title_parent_preference">家长复选框偏好Parent checkbox preference</string>
+    <string name="summary_parent_preference">这是视觉上的父This is visually a parent</string>
+        
+    <string name="title_child_preference">子复选框偏好Child checkbox preference</string>
+    <string name="summary_child_preference">这是视觉上的孩子This is visually a child</string>
+
+    <string name="example_preference_dependency">例偏好依赖Example preference dependency</string>
+    <string name="title_wifi">无线WiFi</string>
+    <string name="title_wifi_settings">WiFi设置WiFi settings</string>
+
+    <string name="default_value_list_preference">测试版beta</string>
+    <string name="default_value_edittext_preference">默认值Default value</string>
+
+    <!-- ============================== -->
+    <!--  应用/搜索示例字符串 app/search examples strings  -->
+    <!-- ============================== -->
+
+    <string name="search_invoke">App/Search/Invoke Search-搜索调用</string>
+    <string name="msg_search">本次活动展示了一些不同的方式来调用搜索，并插入
+                对由搜索活动使用上下文特定数据。This activity shows a few different ways to invoke search, and
+        inserts
+        context-specific data for use by the search activity.
+    </string>
+
+
+    <string name="search_sect_invocation">的方式来调用搜索Ways to invoke search</string>
+    <string name="label_onsearchrequested">onSearchRequested()</string>
+    <string name="search_sect_options">可选搜索参数Optional search parameters</string>
+    <string name="label_search_query_prefill">"充液查询Prefill query: "</string>
+    <string name="label_search_query_appdata">"应用数据App Data: "</string>
+
+    <string name="search_query_results">App/Search/Query Search Results搜索查询结果</string>
+    <string name="msg_search_results">本次活动通过ACTION_SEARCH接受查询字符串
+                 意图。在全面实施，可以使用查询字符串，从选择的结果
+                数据源，并且这些结果给用户的本列表。
+        This activity accepts query strings via the ACTION_SEARCH
+        intent. In a full implementation, you would use the query string to select results from your
+        data source, and present a list of those results to the user.
+    </string>
+
+    <string name="label_search_query">"查询字符串Query String: "</string>
+    <string name="label_search_appdata">"查询的应用数据Query App Data: "</string>
+    <string name="label_search_deliveredby">"方法Activity Method: "</string>
+
+    <string name="search_label">搜索演示Search Demo</string>
+    <string name="search_hint">搜索演示提示Search Demo Hint</string>
+
+    <!-- ================================ -->
+    <!--  应用程序/快捷方式的例子字符串 app/shortcuts examples strings  -->
+    <!-- ================================ -->
+
+    <string name="shortcuts">App/Launcher Shortcuts-启动快捷键</string>
+    <string name="sample_shortcuts">ApiDemos快捷方式</string>
+    <string name="shortcut_name">例子Sample</string>
+
+    <string name="msg_launcher_shortcuts">
+        此活动会为launsample_shortcutscher（主屏幕）的快捷方式，并从这些快捷方式接收意图。尝试一下，返回发射器和
+                长按创建一个快捷方式/n
+        This activity creates shortcuts for the launsample_shortcutscher (home
+        screen), and receives intents from those shortcuts. To try it, return to the launcher and
+        long-press to create a shortcut.
+    </string>
+    <string name="label_intent">Intent:</string>
+
+    <!-- ============================== -->
+    <!--  应用程序/设备策略的例子字符串 -app/device policies examples strings     -->
+    <!-- ============================== -->
+
+    <!-- 清单字符串-Manifest strings -->
+    <string name="activity_sample_device_admin">App/Device Admin-设备管理器，例子</string>
+    <string name="sample_device_admin">Sample Device Admin-设备管理例子</string>
+    <string name="sample_device_admin_description">写作示例代码
+                一类DeviceAdmin。此实现提供了一个用户界面（在ApiDemos）
+                你直接控制的是什么呢DeviceAdmin用
+                 系统、/n
+        Sample code for writing
+        a DeviceAdmin class. This implementation provides a UI (in ApiDemos)
+        for you to directly control what the DeviceAdmin does with the
+        system.
+    </string>
+
+
+
+
+    <!-- 优先头和偏好定义中使用的线 -Strings used in preference headers and preference definitions -->
+    <string name="header_general">常规-General</string>
+    <string name="header_quality">密码质量 -Password quality</string>
+    <string name="header_expiration">密码过期Password expiration</string>
+    <string name="header_lock_wipe">锁屏/擦拭 Lock screen / Wipe</string>
+    <string name="header_encryption">加密 Encryption</string>
+
+
+
+    <string name="enable_admin">启用管理Enable admin</string>
+    <string name="device_capabilities_category">设备功能Device capabilities</string>
+    <string name="disable_camera">禁用所有设备摄像头Disable all device cameras</string>
+    <string name="disable_keyguard_widgets">禁用键盘锁部件Disable keyguard widgets</string>
+    <string name="disable_keyguard_secure_camera">禁用键盘锁的安全摄像头Disable keyguard secure camera</string>
+    <string name="disable_keyguard_notifications">禁用键盘锁通知Disable keyguard notifications</string>
+    <string name="disable_keyguard_unredacted_notifications">禁用键盘锁未编辑通知Disable keyguard unredacted notifications
+    </string>
+
+
+    <string name="disable_keyguard_trust_agents">禁用键盘锁信托代理Disable keyguard Trust Agents</string>
+    <string name="keyguard_widgets_disabled">键盘锁部件禁用Keyguard widgets disabled</string>
+    <string name="keyguard_widgets_enabled">启用键盘锁部件Keyguard widgets enabled</string>
+    <string name="keyguard_secure_camera_disabled">键盘锁的安全摄像头禁用Keyguard secure camera disabled</string>
+    <string name="keyguard_secure_camera_enabled">启用键盘锁的安全摄像头Keyguard secure camera enabled</string>
+    <string name="keyguard_secure_notifications_disabled">键盘锁通知禁用Keyguard notifications disabled</string>
+    <string name="keyguard_secure_notifications_enabled">启用键盘锁通知Keyguard notifications enabled</string>
+    <string name="keyguard_unredacted_notifications_disabled">键盘锁未编辑的通知残Keyguard unredacted notifications
+        disabled
+    </string>
+    <string name="keyguard_unredacted_notifications_enabled">键盘锁未编辑的通知启用Keyguard unredacted
+        notifications enabled
+    </string>
+    <string name="keyguard_trust_agents_disabled">键盘锁信托代理禁用Keyguard Trust Agents disabled</string>
+    <string name="keyguard_trust_agents_enabled">键盘锁信托代理启用Keyguard Trust Agents enabled</string>
+    <string name="camera_disabled">设备禁用相机Device cameras disabled</string>
+    <string name="camera_enabled">启用器件摄像机Device cameras enabled</string>
+    <string name="password_controls_category">密码控制Password controls</string>
+    <string name="set_password_user">设定密码（用户）Set password (user)</string>
+    <string name="set_password_api">设定密码（通过API）Set password (via API)</string>
+    <string name="set_password_api_dialog">设置屏幕锁定密码Set screen lock password to</string>
+    <string name="password_quality_category">密码质量Password quality</string>
+    <string name="password_quality">密码质量Password quality</string>
+
+    <string name="password_minimum_length">最小长度Minimum length</string>
+    <string name="password_minimum_letters">最小字母Minimum letters</string>
+    <string name="password_minimum_numeric">最低数值Minimum numeric</string>
+    <string name="password_minimum_lower_case">最小小写Minimum lower case</string>
+    <string name="password_minimum_upper_case">最低大写Minimum upper case</string>
+    <string name="password_minimum_symbols">最低符号Minimum symbols</string>
+    <string name="password_minimum_non_letter">最小非字母Minimum non-letter</string>
+    <string name="password_expiration_category">密码历史记录/过期Password history / Expiration</string>
+    <string name="password_history_depth">密码历史深度Password history depth</string>
+    <string name="password_expiration_timeout">密码到期超时（分钟）Password expiration timeout (minutes)</string>
+    <string name="password_expiration_status">密码过期状态Password expiration status</string>
+    <string name="lock_wipe_category">锁屏/擦拭Lock screen / Wipe</string>
+    <string name="maximum_lock_time">最大时间屏幕锁（分）Max time to screen lock (minutes)</string>
+    <string name="maximum_password_fails">最大密码失败的地方擦拭Max password failures for local wipe</string>
+    <string name="lock_screen">锁定屏幕现在Lock screen now</string>
+
+
+    <string name="wipe_data">擦除数据Wipe data</string>
+    <string name="wipe_data_summary">擦除内部数据，如恢复出厂设置Wipe internal data, like a factory reset</string>
+    <string name="wipe_all_data">擦除所有数据Wipe all data</string>
+    <string name="wipe_all_data_summary">擦除的内部数据和外部存储Wipe internal data and external storage</string>
+    <string name="encryption_category">加密Encryption</string>
+    <string name="require_encryption">需要加密Require encryption</string>
+    <string name="activate_encryption">激活加密激活加密Activate encryption</string>
+
+    <string name="trust_agent_category">信任代理功能Trust Agent Features</string>
+    <string name="set_trust_agent_component_name">已启用组件名称Enabled Component Name</string>
+    <string name="set_trust_agent_feature_list">已启用的功能（逗号分隔）Enabled Features (comma-separated)</string>
+        
+    <!-- 通过DeviceAdminSample控制器代码使用的字符串 Strings used by DeviceAdminSample controller code -->
+    <string name="password_sufficient">当前密码符合政策要求Current password meets policy requirements</string>
+    <string name="password_insufficient">当前密码不符合政策要求Current password does not meet policy requirements</string>
+    <string name="monkey_reset_password">您可以\'吨重设密码，你是一只猴子！You can\'t reset my password, you are a monkey!</string>
+    <string name="monkey_lock_screen">您可以\'吨锁我的屏幕上，你是一只猴子！You can\'t lock my screen, you are a monkey!</string>
+    <string name="monkey_encryption">您可以\'吨开始加密，你是一只猴子！You can\'t start encryption, you are a monkey!</string>
+    <string name="monkey_wipe_data">您可以\'吨擦拭我的数据，你是一只猴子！You can\'t wipe my data, you are a monkey!</string>
+    <string name="monkey_ok">我不服输I admit defeat</string>
+    <string name="reset_password_warning">你刚才重置您的锁屏密码\“％1$ s \”的“
+        You have just reset your screen lock password to \"%1$s\""
+    </string>
+    <string name="reset_password_ok">唐\'吨忘记Don\'t forget it</string>
+    <string name="add_admin_extra_app_text">附加文本解释为什么需要添加。
+        Additional text explaining why this needs to be added.
+    </string>
+    <string name="status_local_global">本地=％1 $ S/全球=％2 $ SLocal=%1$s / Global=%2$s</string>
+    <string name="status_device_encryption">设备加密状态=％1 $ SDevice encryption status=%1$s</string>
+    <string name="status_days_hours_minutes">%1$sd %2$sh %3$sm</string>
+    <string name="number_format_warning">坏值Bad value \"%1$s\""</string>
+    <string name="wipe_warning_first">这将删除所有数据。你确定吗？This will erase all of your data. Are you sure?</string>
+    <string name="wipe_warning_first_ok">Yes</string>
+    <string name="wipe_warning_first_no">No</string>
+    <string name="wipe_warning_second">这是不是一个考验。这将清除所有的数据！
+            你真的绝对的把握？/n This is not a test. This WILL erase all of your data!
+        Are you really absolutely sure?
+    </string>
+    <string name="wipe_warning_second_full">这是不是一个考验。这将清除所有的数据，
+            包括外部存储！你真的绝对的把握？This is not a test. This WILL erase all of your data,
+        including external storage! Are you really absolutely sure?
+    </string>
+    <string name="wipe_warning_second_ok">BOOM!</string>
+    <string name="wipe_warning_second_no">哎呀，跑了！Oops, run away!</string>
+    <string name="encryption_not_supported">加密不支持在此设备上Encryption is not supported on this device.</string>
+    <string name="encryption_not_supported_ok">OK</string>
+    <string name="encryption_status_unknown">未知unknown</string>
+    <string name="encryption_status_unsupported">不受支持unsupported</string>
+    <string name="encryption_status_inactive">不活跃inactive</string>
+    <string name="encryption_status_activating">激活activating</string>
+    <string name="encryption_status_active">有效active</string>
+    <string name="expiration_status_none">无None</string>
+    <string name="expiration_status_past">密码过期％1 $ s的前Password expired %1$s ago</string>
+    <string name="expiration_status_future">密码从现在到期％1 $ SPassword will expire %1$s from now</string>
+
+
+    <!-- 由样本DeviceAdminReceiver使用的字符串 Strings used by the sample DeviceAdminReceiver -->
+    <string name="admin_receiver_status">设备管理员例子Sample Device Admin: %1$s</string>
+    <string name="admin_receiver_status_enabled">启用enabled</string>
+    <string name="admin_receiver_status_disabled">停用disabled</string>
+    <string name="admin_receiver_status_pw_changed">PW改变pw changed</string>
+    <string name="admin_receiver_status_pw_failed">PW失败pw failed</string>
+    <string name="admin_receiver_status_pw_succeeded">PW成功pw succeeded</string>
+    <string name="admin_receiver_status_disable_warning">这是一个可选消息，警告用户禁用。
+        This is an optional message to warn the user about disabling.
+    </string>
+
+    <!-- ============================== -->
+    <!-- 应用程序/语音识别的例子字符串  - app/voice recognition examples strings  -->
+    <!-- ============================== -->
+
+    <string name="voice_recognition_prompt">这个活动演示语音识别的API。-This activity demonstrates the voice
+    recognition APIs.
+    </string>
+    <string name="speak_button">在线！Speak!</string>
+    <string name="voice_recognition_results">结果：Results:</string>
+
+    <!-- ================================= -->
+    <!--  app/action bar examples strings 应用程序/操作栏的例子字符串 -->
+    <!-- ================================= -->
+
+    <string name="action_bar_mechanics">App/Action Bar-操作栏/Action Bar 操作栏基本例子</string>
+    <string name="action_bar_usage">App/Action Bar-操作栏/Action Bar 基本用法</string>
+    <string name="action_bar_tabs">App/Action Bar-操作栏/Action Bar 标签选项卡</string>
+    <string name="action_bar_settings_action_provider">App/Action Bar-操作栏/Action Provider内容提供者/
+        Settings Action Provider 设置操作提供
+    </string>
+    <string name="action_bar_share_action_provider">App/Action Bar-操作栏/Action Provider内容提供者/
+        Share Action Provider分享行动，内容提供者
+    </string>
+    <string name="action_bar_settings_action_provider_no_handling">Handling in onOptionsItemSelected
+        avoided
+    </string>
+
+    <string name="action_bar_search">搜索</string>
+    <string name="action_bar_add">添加</string>
+    <string name="action_bar_edit">编辑Edit</string>
+    <string name="action_bar_share">分享Share</string>
+    <string name="action_bar_sort">分类Sort</string>
+    <string name="action_bar_sort_alpha">按字母顺序Alphabetically</string>
+    <string name="action_bar_sort_size">按大小By size</string>
+    <string name="action_bar_share_with">与某人分享...Share with...</string>
+    <string name="action_bar_settings">设置Settings</string>
+
+    <string name="action_bar_display_options">App/Action Bar-操作栏/Display Options 显示选项</string>
+    <string name="toggle_home_as_up">显示返回上一页-》箭头</string>
+    <string name="toggle_show_home">显示与隐藏首页</string>
+    <string name="toggle_use_logo">显示与隐藏用户LOGO</string>
+    <string name="toggle_show_title">显示与隐藏ActionBar标题</string>
+    <string name="toggle_show_custom">显示定制，ActionBar的View</string>
+    <string name="toggle_navigation">Navigation导航</string>
+    <string name="cycle_custom_gravity">Cycle Custom View Gravity周期自定义视图重力</string>
+    <string name="toggle_visibility">切换显示与隐藏</string>
+    <string name="toggle_system_ui">切换系统-状态栏显示与隐藏</string>
+
+    <string name="display_options_custom_button">Custom View!</string>
+    <string name="display_options_menu_item">Menu Item</string>
+
+    <string name="btn_add_tab">添加Tab标签</string>
+    <string name="btn_remove_tab">删除最后一个标签</string>
+    <string name="btn_toggle_tabs">切换选项卡模式</string>
+    <string name="btn_remove_all_tabs">删除所有标签</string>
+
+    <string name="action_bar_navigation">App/Action Bar-操作栏/Action Bar Navigation导航</string>
+    <string name="action_bar_navigation_msg">演示各种方式来导航
+                应用领域涉及操作栏。这项活动已经启动的
+                应用程序\的任务的根源。
+    </string>
+    <string name="btn_newactivity">新的任务活动</string>
+    <string name="btn_newdoc">新文件</string>
+
+    <string name="action_bar_navigation_target">应用程序导航儿童App Nav Child</string>
+    <string name="action_bar_navigation_target_msg">这是一个子活动由发动
+                 应用。这可能是在任何应用程序\的主要任务和其他任务。 按
+                了操作栏上的应用程序\'s系列导航起来，无论在哪里
+                出现这一活动。
+    </string>
+
+    <!-- ================================= -->
+    <!--  app/print print examples strings -应用程序/ Print打印字符串的例子  -->
+    <!-- ================================= -->
+
+    <string name="print_bitmap">App/Print/Print Bitmap位图打印</string>
+    <string name="print_html_from_screen">App/Print/Print HTML from screen打印与屏幕</string>
+    <string name="print_html_off_screen">App/Print/Print HTML off screen打印HTML关闭屏幕</string>
+    <string name="print_custom_content">App/Print/Print Custom Layout打印自定义布局</string>
+    <string name="print">Print</string>
+    <string name="print_html_off_screen_msg">从溢出菜单中你可以打印一些
+                关闭屏幕的内容。From the overflow menu you can print some
+        off screen content.
+    </string>
+    <string name="android_logo">Android logo</string>
+
+
+    <!-- ============================ -->
+    <!--  图形字符串的例子-graphics examples strings  -->
+    <!-- ============================ -->
+    <string name="hide_me">隐藏我！Hide Me!</string>
+    <string name="density_title">密度：未知屏幕Density: Unknown Screen</string>
+    <string name="camera_alert">设备只有一个摄像头！Device has only one camera!</string>
+    <string name="switch_cam">切换摄像机Switch Camera</string>
+    <string name="draggable_card">可拖动卡Draggable Card</string>
+
+    <string name="enable_tilt">启用倾斜Enable Tilt</string>
+    <string name="enable_shading">启用阴影Enable Shading</string>
+    <string name="select_shape">选择形状Select Shape</string>
+
+    <!-- ============================ -->
+    <!--  媒体的例子字符串 media examples strings  -->
+    <!-- ============================ -->
+
+
+    <string name="local_video">从本地文件播放视频Play Video from Local File</string>
+    <string name="stream_video">播放视频流Play Streaming Video</string>
+    <string name="local_audio">从本地文件播放音频Play Audio from Local File</string>
+    <string name="res_audio">从资源播放音频Play Audio from Resources</string>
+    <string name="screen_sharing_toggle">切换屏幕共享Toggle screen sharing</string>
+
+    <!-- =========================== -->
+    <!-- OS实例的字符串os examples strings    -->
+    <!-- =========================== -->
+    <string name="no_sig_motion">显著运动传感器未检出Significant Motion Sensor Not Detected</string>
+    <string name="sig_motion">显著运动传感器检测Significant Motion Sensor Detected</string>
+    <string name="sig_motion_enabled">显著运动传感器启用Significant Motion Sensor Enabled</string>
+    <string name="sig_motion_auto_disabled">显著运动传感器自动禁用Significant Motion Sensor Auto Disabled</string>
+
+    <!-- ============================ -->
+    <!--  视图的示例字符串views examples strings  -->
+    <!-- ============================ -->
+
+    <string name="linear_layout_8_vertical">Vertical垂直</string>
+    <string name="linear_layout_8_horizontal">Horizontal水平</string>
+    <string name="linear_layout_8_top">Top顶部</string>
+    <string name="linear_layout_8_middle">Middle中间</string>
+    <string name="linear_layout_8_bottom">Bottom底部</string>
+    <string name="linear_layout_8_left">Left左边</string>
+    <string name="linear_layout_8_center">Center中心</string>
+    <string name="linear_layout_8_right">Right右边</string>
+    <string name="linear_layout_10_from">From:</string>
+    <string name="linear_layout_10_to">To:</string>
+    <string name="radio_group_snack">零食Snack</string>
+    <string name="radio_group_selection">"你选择:You have selected: "</string>
+    <string name="radio_group_none">(没有一个none)</string>
+    <string name="table_layout_7_quit">退出Quit</string>
+    <string name="table_layout_7_ctrlq">Ctrl-Q</string>
+    <string name="table_layout_8_quit">退出Quit</string>
+    <string name="table_layout_8_ctrlq">Ctrl-Q</string>
+
+
+    <string name="seekbar_tracking_on">跟踪上Tracking on</string>
+    <string name="seekbar_tracking_off">跟踪关闭Tracking off</string>
+    <string name="seekbar_from_touch">从触摸from touch</string>
+
+    <string name="enabled">已启用Enabled</string>
+
+    <string name="ratingbar_rating">评级Rating:</string>
+
+    <string name="popup_menu_search">搜索Search</string>
+    <string name="popup_menu_add">添加Add</string>
+    <string name="popup_menu_edit">编辑Edit</string>
+    <string name="popup_menu_share">共享Share</string>
+    <string name="popup_menu_button">制作弹出Make a Popup!</string>
+
+    <string name="secure_view_description"> 这项活动表明，当检测到它可能遮蔽视图
+               被其他窗口。
+        This activity demonstrates a view that detects when it is potentially obscured
+        by other windows.
+    </string>
+    <string name="secure_view_step1_heading">点击我先Click me first:</string>
+    <string name="secure_view_step1_detail">弹出，这将覆盖敬酒，并在一个贫穷的企图愚弄掩盖这一窗口
+                你去点击大红色按钮。唐\'吨做到这一点！
+        Pop up a toast that will overlay and obscure this window in a poor attempt to fool
+        you into clicking the big red buttons. Don\'t do it!
+    </string>
+
+    <string name="secure_view_step2_heading">未过滤演示Unfiltered demo:</string>
+    <string name="secure_view_step2_detail"> 该按钮无过滤。此按钮仍然会照常工作，而
+            面包是可见的，被欺骗的看法。 小心！
+        This button does no filtering. This button will still work as usual while the
+        toast is visible and is spoofing the view. Careful!
+    </string>
+    <string name="secure_view_step3_heading">内置过滤演示Built-in filtering demo:</string>
+    <string name="secure_view_step3_detail">这个按钮使用由框架提供的内置的安全触摸滤波
+            使用了android：filterTouchesWhenObscured属性。该按钮将无法使用
+            而举杯可见。
+        This button uses the built-in secure touch filtering provided by the framework
+        using the android:filterTouchesWhenObscured attribute. This button will be inoperable
+        while the toast is visible.
+    </string>
+
+    <string name="secure_view_step4_heading">自定义过滤演示Custom filtering demo:</string>
+    <string name="secure_view_step4_detail">此按钮过滤器倒是采用了触摸监听器来检查MotionEvent标志
+            并警告用户。如果在触及该按钮将显示一条消息
+            敬酒是可见的。
+        This button filters touches using a touch listener to examine the MotionEvent flags
+        and warns the user. This button will display a message if touched while the
+        toast is visible.
+    </string>
+
+    <string name="secure_view_pop_toast">流行敬酒Pop toast</string>
+    <string name="secure_view_button">要\'t单击！它\'会花费你！Don\'t click! It\'ll cost you!</string>
+    <string name="secure_view_action_dialog_title">哦，不！Oh no!</string>
+    <string name="secure_view_action_dialog_dismiss">糟糕Oops...</string>
+    <string name="secure_view_caught_dialog_title">保存Saved!</string>
+    <string name="secure_view_caught_dialog_message">小心！似乎有另一个窗口部分遮住这个窗口...
+            一些难堪HORRIBLE可能发生。
+        Careful! There appears to be another window partly obscuring this window...
+        Something unutterably HORRIBLE might have happened.
+    </string>
+    <string name="secure_view_caught_dialog_dismiss">唷Phew!</string>
+
+    <string name="secure_view_overlay_description">干杯！干杯！A toast! A toast!</string>
+    <string name="secure_view_overlay_button1">完全安全的，相信我... Totally safe, trust me...</string>
+    <string name="secure_view_overlay_button2">点击Clicky?</string>
+    <string name="secure_view_overlay_button3">想起企鹅Think of the penguins!</string>
+
+
+    <string name="split_touch_view_description">
+        本次活动展示了多个意见分裂触摸事件
+        在视图组。在这里，我们有一个的LinearLayout内的两个列表视图
+        有属性android：设置为“true”splitMotionEvents。
+        同时尝试滚动两个列表使用多个手指。
+        This activity demonstrates splitting touch events across multiple views
+        within a view group. Here we have two ListViews within a LinearLayout
+        that has the attribute android:splitMotionEvents set to "true".
+        Try scrolling both lists simultaneously using multiple fingers.
+    </string>
+    <string name="split_touch_view_cheese_toast">您有任何Do you have any %1$s?\n%2$s</string>
+
+    <string name="searchview_hint">找些Find something</string>
+    <string name="cheese_hunt_hint">奶酪追捕Cheese hunt</string>
+    <string name="open_search">扩展Expand</string>
+    <string name="close_search">图标化Iconify</string>
+
+
+    <string name="drag_explanation">
+        在一个点长按开始拖动，然后放下对另一点。目标点会追加拖动文本转换为EditText上。 Longpress on a dot to start a drag, then drop over another dot. The destination
+        dot will append the drag\'s textual conversion to the EditText.
+    </string>
+
+    <string name="game_controller_input_description">
+        本活动演示了如何处理从接收到的输入事件
+                游戏控制器。现在请连接您的游戏控制器，并尝试
+                移动操纵杆或按按钮。如果有帮助，试着想象
+                你是在紧追谁绑架外国人的一个孤独的太空牛仔
+                在他们的方式回到仙女座你最喜欢的骆驼......This activity demonstrates how to process input events received from
+        game controllers. Please connect your game controller now and try
+        moving the joysticks or pressing buttons. If it helps, try to imagine
+        that you are a lone space cowboy in hot pursuit of the aliens who kidnapped
+        your favorite llama on their way back to Andromeda...
+    </string>
+
+    <string name="game_controller_input_heading_device">输入设备Input Device</string>
+    <string name="game_controller_input_heading_axes">轴Axes</string>
+    <string name="game_controller_input_heading_keys">键和按键Keys and Buttons</string>
+    <string name="game_controller_input_label_device_name">名称Name</string>
+    <string name="game_controller_input_key_pressed">按下Pressed</string>
+    <string name="game_controller_input_key_released">发布Released</string>
+
+
+    <string name="hover_description">
+    本活动演示如何处理与View.onHoverEvent悬停事件，
+            ViewGroup.onInterceptHoverEvent和View.setOnHoverListener。
+        This activity demonstrates how to handle hover events with View.onHoverEvent,
+        ViewGroup.onInterceptHoverEvent, and View.setOnHoverListener.
+    </string>
+    <string name="hover_intercept_checkbox">使容器拦截悬停事件Make container intercept hover events</string>
+    <string name="hover_message_initial">尝试使用鼠标或触摸板将鼠标悬停在内部意见
+            这一活动。Try using a mouse or touch pad to hover over views within
+        this activity.
+    </string>
+    <string name="hover_message_entered_at">在（％1 $ F，％2 $ F）进入容器中Entered the container at (%1$f,%2$f).</string>
+    <string name="hover_message_moved_at">在（％1 $ F，％2 $ F）在容器内移动。Moved within the container at (%1$f,%2$f).</string>
+    <string name="hover_message_exited_at">在（％1 $ F，％2 $ F）退出容器。指针可以是
+            子的边界，而不是内部。Exited the container at (%1$f,%2$f). The pointer may be
+        inside the bounds of a child instead.
+    </string>
+    <string name="hover_intercept_message_initial">尝试将鼠标悬停在按钮Try hovering over the button.</string>
+    <string name="hover_intercept_message_intercepted">截获悬停事件，而不是将其发送
+            到按钮。嗡额定标称！Intercepted hover event instead of sending it
+        to the button. Om nom nom!
+    </string>
+    <string name="hover_button">将鼠标悬停在这里Hover Here</string>
+    <!-- ============================== -->
+    <!--  谷歌登录例子字符串GoogleLogin examples strings  -->
+    <!-- ============================== -->
+    <string name="googlelogin_err">使用更好的用户名和密码Use a better username and password, please.</string>
+
+
+
+    <!-- ================================== -->
+    <!--  初始字符串的布局文件initial strings for layout files  -->
+    <!-- ================================== -->
+    <string name="animation_1_instructions">请输入您的密码Please enter your password:</string>
+    <string name="animation_2_text_1">自由Freedom</string>
+    <string name="animation_2_text_2">不是别的，而是is nothing else but</string>
+    <string name="animation_2_text_3">要更好的机会a chance to be better.</string>
+    <string name="animation_2_text_4">加缪— Albert Camus</string>
+    <string name="animation_2_instructions">选择动画Select an animation:</string>
+    <string name="animation_3_text">内插器Interpolators</string>
+    <string name="autocomplete_1_instructions">键入文本字段中自动完成Type in the text field for auto-completion.</string>
+    <string name="autocomplete_1_country">国家Country:</string>
+    <string name="autocomplete_1_focus">给我焦点Give me Focus</string>
+    <string name="autocomplete_2_country">国家Country:</string>
+    <string name="autocomplete_2_focus">给我焦点Give me Focus</string>
+    <string name="autocomplete_3_button_1">滚动Scroll</string>
+
+    <string name="autocomplete_3_button_2">到Down</string>
+    <string name="autocomplete_3_button_3">见To</string>
+    <string name="autocomplete_3_button_4">自动See</string>
+    <string name="autocomplete_3_button_5">完成Auto</string>
+    <string name="autocomplete_3_button_6">完成Complete</string>
+    <string name="autocomplete_3_button_7">文本Text</string>
+    <string name="autocomplete_3_button_8">查看View</string>
+    <string name="autocomplete_3_button">按钮Button</string>
+    <string name="autocomplete_3_country">国家Country:</string>
+    <string name="autocomplete_4_instructions">键入文本字段中自动完成Type in the text field for auto-completion.</string>
+    <string name="autocomplete_4_name">名称Name:</string>
+    <string name="autocomplete_4_message">您必须在您的地址簿中的联系人。打字*意志
+            显示所有联系人。You must have contacts in your address book. Typing * will
+        show all of your contacts.
+    </string>
+
+    <string name="autocomplete_5_instructions">键入文本字段中自动完成Type in the text field for auto-completion.</string>
+    <string name="autocomplete_5_hint">键入*会显示所有联系人Typing * will show all of your contacts.</string>
+    <string name="autocomplete_5_name">名称Name:</string>
+    <string name="autocomplete_6_to">收件人To:</string>
+    <string name="autocomplete_6_to_hint">到To</string>
+    <string name="autocomplete_6_subject">主题Subject:</string>
+    <string name="autocomplete_7_instructions">在文本字段中键入自动完成
+            话。Type in the text field for auto-completion by
+        words.
+    </string>
+
+    <string name="autocomplete_7_country">国家Country:</string>
+    <string name="autocomplete_7_focus">给我焦点Give me Focus</string>
+    <string name="baseline_1_label">标签Label:</string>
+    <string name="baseline_1_button">按钮Button</string>
+    <string name="baseline_1_bigger">更大Bigger</string>
+    <string name="baseline_2_label">标签Label:</string>
+    <string name="baseline_2_button">按钮Button</string>
+    <string name="baseline_2_bigger">更大Bigger</string>
+    <string name="baseline_3_label">标签Label:</string>
+    <string name="baseline_3_button">按钮ButtonButton</string>
+    <string name="baseline_3_bigger">更大Bigger</string>
+    <string name="baseline_3_explanation">这个例子表明，基线对齐没有影响
+            当布局重力设定为center_vertical。This example shows that baseline alignment has no effect
+        when the layout gravity is set to center_vertical.
+    </string>
+
+    <string name="baseline_4_label">标签Label:</string>
+    <string name="baseline_4_button">按钮Button</string>
+    <string name="baseline_4_bigger">更大Bigger</string>
+    <string name="baseline_4_label_2">标签再次Label Again</string>
+    <string name="baseline_4_label_3">标签我Label Me</string>
+    <string name="baseline_6_multi_line">这是一个\ nmulti行字段。This is a\nmulti-line field.</string>
+    <string name="baseline_6_baseline">基线对齐Baseline Aligned</string>
+    <string name="baseline_7_fat">大和大胆Big and bold</string>
+    <string name="baseline_7_lean">超薄和光滑Slim and slick.</string>
+    <string name="baseline_nested_1_label">标签label</string>
+    <string name="controls_1_save">保存Save</string>
+    <string name="controls_1_checkbox_1">复选框1Checkbox 1</string>
+    <string name="controls_1_checkbox_2">复选框2Checkbox 2</string>
+    <string name="controls_1_radiobutton_1">单选1RadioButton 1</string>
+    <string name="controls_1_radiobutton_2">单选2RadioButton 2</string>
+    <string name="controls_1_star">星Star</string>
+    <string name="focus_1_message">服务没有运行Service not running</string>
+    <string name="focus_1_placeholder">占位符placeholder</string>
+    <string name="focus_2_left">离开left</string>
+    <string name="focus_2_jump">跳过去我从左至右jump over me from L to R</string>
+    <string name="focus_2_right">右键right</string>
+    <string name="focus_3_left">离开left</string>
+    <string name="focus_3_right">右键right</string>
+    <string name="focus_3_top">顶部top</string>
+    <string name="focus_3_bottom">底bottom</string>
+    <string name="focus_5_button1">1</string>
+    <string name="focus_5_button2">2</string>
+    <string name="focus_5_button3">3</string>
+    <string name="focus_5_button4">4</string>
+    <string name="focus_5_button5">5</string>
+    <string name="grid_layout_1_instructions">在此输入Type here:</string>
+    <string name="grid_layout_1_ok">Ok</string>
+    <string name="grid_layout_1_cancel">取消Cancel</string>
+    <string name="googlelogin_login">登录Login</string>
+    <string name="googlelogin_bad_login">登录失败Bad Login</string>
+    <string name="googlelogin_clear">明确凭据Clear Credentials</string>
+    <string name="googlelogin_user">用户名Username:</string>
+    <string name="layout_animation_name">姓名Name:</string>
+    <string name="layout_animation_lastname">姓Last Name:</string>
+    <string name="layout_animation_phone">电话Phone:</string>
+    <string name="layout_animation_address">地址Address:</string>
+    <string name="linear_layout_1_top">这是顶视图。</string>
+    <string name="linear_layout_1_middle">这是中间的视图。它有更多的文本视图顶部或者底部视图。</string>
+    <string name="linear_layout_1_bottom">这是底部视图。</string>
+    <string name="linear_layout_2_top">这是顶视图。</string>
+    <string name="linear_layout_2_middle">这是中间的视图。它有更多的文本视图顶部或者底部视图。</string>
+    <string name="linear_layout_2_bottom">这是底部视图。</string>
+    <string name="linear_layout_3_top">这是顶视图This is the top view.</string>
+    <string name="linear_layout_3_middle">这是中间的视图。它有更多的文本视图顶部或者底部视图。This is the middle view. It has
+        more text in it than either the top view or the bottom view.
+    </string>
+    <string name="linear_layout_3_bottom">这是底部视图This is the bottom view.</string>
+    <string name="linear_layout_5_instructions">类型:</string>
+    <string name="linear_layout_5_cancel">取消</string>
+    <string name="linear_layout_5_ok">确定</string>
+    <string name="linear_layout_6_one">一个</string>
+    <string name="linear_layout_6_two">二个</string>
+    <string name="linear_layout_6_three">这是第三个</string>
+    <string name="linear_layout_6_four">四个</string>
+    <string name="linear_layout_7_small">演示文本</string>
+    <string name="linear_layout_7_big">更多的文本比任何其他列。本专栏应该设定的高度线性布局。</string>
+    <string name="linear_layout_7_wrap">包裹内容</string>
+    <string name="linear_layout_8_a">A</string>
+    <string name="linear_layout_8_b">B</string>
+    <string name="linear_layout_8_c">C</string>
+    <string name="linear_layout_9_button">Button</string>
+    <string name="link_text_auto">
+        <b>文本1：各种
+                        数据，就可以自动连接的。
+                    </b>的
+                 在
+                本文有一些事情是可行的。 例如，
+                你可以点击http://www.google.com，它将启动
+                 网页浏览器。您可以在google.com上点击了。 如果你
+                点击（415）555-1212，应该拨打的电话。或只写
+                foobar@example.com一个电子邮件链接。如果你有一个像URI
+                http://www.example.com/lala/foobar@example.com你应该得到的
+                完整链接不是电子邮件地址。或者你可以把一个位置
+                像1600剧场百汇，山景城，CA94043总结：
+                https://www.google.com，或650-253-0000，somebody@example.com，
+                或9606莫帕克北高速公路，400室，奥斯汀，德克萨斯州78759。
+        <b>text1: Various kinds
+            of data that will be auto-linked.
+        </b>
+        In
+        this text are some things that are actionable. For instance,
+        you can click on http://www.google.com and it will launch the
+        web browser. You can click on google.com too. If you
+        click on (415) 555-1212 it should dial the phone. Or just write
+        foobar@example.com for an e-mail link. If you have a URI like
+        http://www.example.com/lala/foobar@example.com you should get the
+        full link not the e-mail address. Or you can put a location
+        like 1600 Amphitheatre Parkway, Mountain View, CA 94043. To summarize:
+        https://www.google.com, or 650-253-0000, somebody@example.com,
+        or 9606 North MoPac Expressway, Suite 400, Austin, TX 78759.
+    </string>
+    <string name="link_text_manual">
+        <b>文本2：使用＆LT明确的联系; A＆GT;标记。</b>的
+                这有标记的
+                <a href="http://www.google.com">链接</a>
+                指定
+                通过＆LT; A＆GT; 标签。使用\“电话：\”URL
+                来<a href="tel:4155551212">拨打电话号码</a>
+        <b>text2: Explicit links using &lt;a&gt; markup.</b>
+        This has markup for a
+        <a href="http://www.google.com">link</a>
+        specified
+        via an &lt;a&gt; tag. Use a \"tel:\" URL
+        to<a href="tel:4155551212">dial a phone number</a>.
+    </string>
+    <string name="list_8_new_photo">添加新图片</string>
+    <string name="list_8_clear_photos">清除图片</string>
+
+    <string name="list_8_no_photos">没有相片No photos</string>
+    <string name="progressbar_1_plus">+</string>
+    <string name="progressbar_1_minus">-</string>
+    <string name="progressbar_1_default_progress">默认的进度Default progress:</string>
+    <string name="progressbar_1_secondary_progress">中的进展Secondary progress:</string>
+    <string name="progressbar_3_progress">显示进度Show Progress</string>
+    <string name="progressbar_3_indeterminate">显示不确定Show Indeterminate</string>
+    <string name="progressbar_3_indeterminate_no_title">显示不确定无标题Show Indeterminate No Title</string>
+    <string name="progressbar_4_toggle">切换不确定Toggle Indeterminate</string>
+
+    <string name="radio_group_1_breakfast">早餐Breakfast</string>
+    <string name="radio_group_1_lunch">午餐Lunch</string>
+    <string name="radio_group_1_dinner">晚餐Dinner</string>
+    <string name="radio_group_1_all">全部All of them</string>
+    <string name="radio_group_1_selection">你选择:(一个)You have selected: (none)</string>
+    <string name="radio_group_1_clear">清除Clear</string>
+    <string name="receive_result_instructions">Press the button to get an activity result, which
+        will be displayed here:按下按钮，得到活动的结果，这
+                这里会显示：
+    </string>
+    <string name="receive_result_result">Get Result获取结果</string>
+    <string name="relative_layout_1_top">顶部</string>
+    <string name="relative_layout_1_bottom">底部</string>
+    <string name="relative_layout_1_center">在指定顶部下方，底部上方</string>
+    <string name="relative_layout_2_instructions">类型:</string>
+    <string name="relative_layout_2_ok">确定</string>
+    <string name="relative_layout_2_cancel">取消</string>
+    <string name="rotation_animation_description">
+        旋转褪色或jumpcut更改默认旋转动画。
+                仅当FLAG_FULLSCREEN设置工作，并且没有对话框上。
+                试着用和不用关机对话框中可见旋转。
+        Change the default rotation animation from rotating to fade or jumpcut.
+        Only works if FLAG_FULLSCREEN is set and there are no dialogs up.
+        Try rotating with and without the Power Off dialog visible.
+    </string>
+    <string name="rotation_animation_fullscreen">全屏 FULLSCREEN</string>
+    <string name="rotation_animation_choices">旋转动画：Rotation Animation:</string>
+    <string name="rotation_animation_rotate">旋转动画ROTATE</string>
+    <string name="rotation_animation_crossfade">旋转动画淡入淡出XFADE</string>
+    <string name="rotation_animation_jumpcut">旋转动画-跳转切换JUMPCUT</string>
+
+    <string name="scroll_view_1_text_1">Text View 1</string>
+    <string name="scroll_view_1_button_1">Button 1</string>
+    <string name="scroll_view_1_text_2">Text View 2</string>
+    <string name="scroll_view_1_button_2">Button 2</string>
+    <string name="scroll_view_1_text_3">Text View 3</string>
+    <string name="scroll_view_1_button_3">Button 3</string>
+    <string name="scroll_view_1_text_4">Text View 4</string>
+    <string name="scroll_view_1_button_4">Button 4</string>
+    <string name="scroll_view_1_text_5">Text View 5</string>
+    <string name="scroll_view_1_button_5">Button 5</string>
+    <string name="scroll_view_1_text_6">Text View 6</string>
+    <string name="scroll_view_1_button_6">Button 6</string>
+    <string name="scroll_view_2_text_1">Text View 1</string>
+    <string name="scroll_view_2_button_1">Button 1</string>
+    <string name="scrollbar_1_text">Lorem ipsum dolor sit amet.</string>
+    <string name="scrollbar_2_text">Lorem ipsum dolor sit amet.</string>
+    <string name="scrollbar_3_text">
+        The Android platform is a software stack for mobile devices including an
+        operating system, middleware and key applications. Developers can create
+        applications for the platform using the Android SDK. Applications are written
+        using the Java programming language and run on Dalvik, a custom virtual
+        machine designed for embedded use which runs on top of a Linux kernel.
+
+        If you want to know how to develop applications for Android, you\'re in the
+        right place. This site provides a variety of documentation that will help you
+        learn about Android and develop mobile applications for the platform.
+
+        An early look at the the Android SDK is also available. It includes sample
+        projects with source code, development tools, an emulator, and of course all
+        the libraries you\'ll need to build an Android application. What would it take
+        to build a better mobile phone?
+    </string>
+    <string name="spinner_1_color">颜色Color:</string>
+    <string name="spinner_1_planet">行星Planet:</string>
+    <string name="spinner_1_color_prompt">选择颜色Choose a color</string>
+    <string name="spinner_1_planet_prompt">选择一个星球Choose a planet</string>
+
+    <string name="table_layout_1_star">*普通单元格</string>
+    <string name="table_layout_1_triple_star">***普通单元格</string>
+    <string name="table_layout_1_open">普通单元格</string>
+    <string name="table_layout_1_open_shortcut">普通单元格</string>
+    <string name="table_layout_1_save">普通单元格</string>
+    <string name="table_layout_1_save_shortcut">普通单元格</string>
+    <string name="table_layout_1_quit">Q普通单元格</string>
+    <string name="table_layout_1_quit_shortcut">普通单元格</string>
+    <string name="table_layout_2_path_1">普通单元格</string>
+    <string name="table_layout_2_path_2">上面是个空单元格</string>
+    <string name="table_layout_2_open">普通单元格button</string>
+    <string name="table_layout_2_save">保存</string>
+    <string name="table_layout_2_save_all">保存所有</string>
+    <string name="table_layout_3_star">*普通单元格</string>
+    <string name="table_layout_3_triple_star">***普通单元格</string>
+    <string name="table_layout_3_open">Open\u2026</string>
+    <string name="table_layout_3_open_shortcut">普通单元格</string>
+    <string name="table_layout_3_save">普通单元格</string>
+    <string name="table_layout_3_save_shortcut">普通单元格</string>
+    <string name="table_layout_3_too_long">普通单元格</string>
+    <string name="table_layout_3_quit">普通单元格</string>
+    <string name="table_layout_3_quit_shortcut">普通单元格</string>
+    <string name="table_layout_4_open">普通单元格</string>
+    <string name="table_layout_4_open_shortcut">普通单元格</string>
+    <string name="table_layout_4_save">普通单元格</string>
+    <string name="table_layout_4_save_shortcut">普通单元格</string>
+
+    <string name="table_layout_5_open">普通单元格</string>
+    <string name="table_layout_5_open_shortcut">普通单元格</string>
+    <string name="table_layout_5_save">普通单元格</string>
+    <string name="table_layout_5_save_shortcut">普通单元格</string>
+    <string name="table_layout_5_save_as">普通单元格</string>
+    <string name="table_layout_5_save_as_shortcut">普通单元格</string>
+    <string name="table_layout_5_import">普通单元格</string>
+    <string name="table_layout_5_export">普通单元格</string>
+    <string name="table_layout_5_export_shortcut">普通单元格</string>
+    <string name="table_layout_5_quit">普通单元格</string>
+
+    <string name="table_layout_6_x">X</string>
+    <string name="table_layout_6_open">Open\u2026</string>
+    <string name="table_layout_6_open_shortcut">Ctrl-O</string>
+    <string name="table_layout_6_save">Save\u2026</string>
+    <string name="table_layout_6_save_shortcut">Ctrl-S</string>
+    <string name="table_layout_6_save_as">Save As\u2026</string>
+    <string name="table_layout_6_save_as_shortcut">Ctrl-Shift-S</string>
+    <string name="table_layout_6_import">Import\u2026</string>
+    <string name="table_layout_6_export">Export\u2026</string>
+    <string name="table_layout_6_export_shortcut">Ctrl-E</string>
+    <string name="table_layout_6_quit">Quit\u2026</string>
+    <string name="table_layout_7_x">X</string>
+    <string name="table_layout_7_open">Open\u2026</string>
+    <string name="table_layout_7_open_shortcut">Ctrl-O</string>
+    <string name="table_layout_7_save">Save\u2026</string>
+    <string name="table_layout_7_save_shortcut">Ctrl-S</string>
+    <string name="table_layout_7_save_as">Save As\u2026</string>
+    <string name="table_layout_7_save_as_shortcut">Ctrl-Shift-S</string>
+    <string name="table_layout_7_import">Import\u2026</string>
+    <string name="table_layout_7_export">Export\u2026</string>
+    <string name="table_layout_7_export_shortcut">Ctrl-E</string>
+    <string name="table_layout_7_toggle_checkmarks">Toggle Checkmarks</string>
+    <string name="table_layout_7_toggle_shortcuts">Toggle Shortcuts</string>
+    <string name="table_layout_8_x">X</string>
+    <string name="table_layout_8_open">Open\u2026</string>
+    <string name="table_layout_8_open_shortcut">Ctrl-O</string>
+    <string name="table_layout_8_save">Save\u2026</string>
+    <string name="table_layout_8_save_shortcut">Ctrl-S</string>
+    <string name="table_layout_8_save_as">Save As\u2026</string>
+    <string name="table_layout_8_save_as_shortcut">Ctrl-Shift-S</string>
+    <string name="table_layout_8_import">Import\u2026</string>
+    <string name="table_layout_8_export">Export\u2026</string>
+    <string name="table_layout_8_export_shortcut">Ctrl-E</string>
+    <string name="table_layout_8_toggle_stretch">Toggle Stretch</string>
+    <string name="table_layout_9_open">Open\u2026</string>
+    <string name="table_layout_9_open_shortcut">Ctrl-O</string>
+    <string name="table_layout_9_save">Save\u2026</string>
+    <string name="table_layout_9_save_shortcut">Ctrl-S</string>
+    <string name="table_layout_9_save_as">Save As\u2026</string>
+    <string name="table_layout_9_save_as_shortcut">Ctrl-Shift-S</string>
+    <string name="table_layout_9_save_all">Save All And Do A Lot Of Stuff Just To Be Too Long For
+        This Screen Because It Is A Test After All
+    </string>
+    <string name="table_layout_9_save_all_shortcut">Ctrl-E</string>
+    <string name="table_layout_9_import">Import\u2026</string>
+    <string name="table_layout_9_export">Export\u2026</string>
+    <string name="table_layout_9_export_shortcut">Ctrl-E</string>
+    <string name="table_layout_9_toggle_shrink">Toggle Shrink</string>
+    <string name="table_layout_10_user">User</string>
+    <string name="table_layout_10_password">Password</string>
+    <string name="table_layout_10_cancel">Cancel</string>
+    <string name="table_layout_10_login">Login</string>
+    <string name="table_layout_12_a">A</string>
+    <string name="table_layout_12_b">BB</string>
+    <string name="table_layout_12_c">CCCC</string>
+    <string name="table_layout_12_d">D</string>
+    <string name="table_layout_12_e">E</string>
+    <string name="table_layout_12_f">F</string>
+    <string name="table_layout_12_g">G</string>
+    <string name="table_layout_12_h">H</string>
+    <string name="visibility_1_view_1">View A</string>
+    <string name="visibility_1_view_2">View B</string>
+    <string name="visibility_1_view_3">View C</string>
+    <string name="visibility_1_vis">Vis</string>
+    <string name="visibility_1_invis">Invis</string>
+    <string name="visibility_1_gone">Gone</string>
+
+
+    <string name="google_login_username_text"></string>
+
+    <string name="incoming_message_info_message_text">this is the text of a previous message.\nkthx.
+        meet u for dinner. cul8r
+    </string>
+
+    <string name="incoming_message_view_message_text">This is the text of the posted notification.
+    </string>
+    <string name="imcoming_message_view_message2_text">Did you notice that the status bar icon
+        disappeared?
+    </string>
+    <string name="imcoming_message_ticker_text">新的短信：New text message:
+        <xliff:g id="text">%0$s</xliff:g>
+    </string>
+
+    <string name="log_text_box_1_do_nothing_text">奈何Do nothing</string>
+    <string name="log_text_box_1_add_text">添加Add</string>
+
+    <string name="notify_with_text_long_notify_text">通知以文本通知长文本Show Long Notification</string>
+    <string name="notify_with_text_short_notify_text">文字简短通知文本通知Show Short Notification</string>
+
+
+    <string name="marquee_default">这款采用3默认字幕动画限制-This use the default marquee animation limit of
+        3
+    </string>
+    <string name="marquee_once">这将运行字幕动画曾经-This will run the marquee animation once</string>
+    <string name="marquee_forever">这将永远运行字幕动画-This will run the marquee animation forever</string>
+
+    <string name="table_layout_10_password_text"></string>
+    <string name="table_layout_10_username_text"></string>
+
+    <string name="text_switcher_1_next_text">下一个Next</string>
+
+    <string name="date_widgets_example_dateDisplay_text"></string>
+
+    <string name="date_widgets_example_pickTime12_text">更改时间（12小时），change the time (12 hour)</string>
+    <string name="date_widgets_example_pickTime24_text">更改时间（12小时），change the time (24 hour)</string>
+    <string name="date_widgets_example_pickDate_text">更改日期change the date</string>
+
+    <string name="buttons_1_normal">正常Normal</string>
+    <string name="buttons_1_right">右键Right</string>
+    <string name="buttons_1_small">小Small</string>
+    <string name="buttons_1_small_right">S R</string>
+    <string name="buttons_1_small_left">S L</string>
+    <string name="buttons_1_small_up">S U</string>
+    <string name="buttons_1_small_down">S D</string>
+    <string name="buttons_1_toggle">切换Toggle</string>
+
+    <string name="expandable_list_sample_action">活动例子Sample action</string>
+
+    <string name="chronometer_start">开始</string>
+    <string name="chronometer_stop">停止</string>
+    <string name="chronometer_reset">重置</string>
+    <string name="chronometer_set_format">设置格式字符串</string>
+    <string name="chronometer_clear_format">清晰的格式字符串</string>
+    <string name="chronometer_initial_format">初始格式Initial format:
+        <xliff:g id="initial-format">%s</xliff:g>
+    </string>
+
+    <string name="play">播放Play</string>
+    <string name="pause">暂停Pause</string>
+
+    <!-- ============================ -->
+    <!--  振动器字符串示例  -->
+    <!-- ============================ -->
+    <string name="vibrate">颤动Vibrate</string>
+
+    <string name="image_view_large_normal">在正常尺寸大图Large image at normal size</string>
+    <string name="image_view_large_at_most">大图像最多50×50扩展到Large image scaled to at most 50x50</string>
+    <string name="image_view_large_at_most_padded">大图像缩放到最多70x70与
+             填充Large image scaled to at most 70x70 with padding
+    </string>
+    <string name="image_view_large_exactly_padded">比例恰好70x70大形象填充Large image scaled to exactly 70x70 with
+        padding
+    </string>
+    <string name="image_view_small_normal">在正常大小的小图片Small image at normal size</string>
+    <string name="image_view_small_at_most">小图像最多50×50扩展到Small image scaled to at most 50x50</string>
+    <string name="image_view_small_at_most_padded">小的图像缩放到最多70x70与
+             填充Small image scaled to at most 70x70 with
+        padding
+    </string>
+    <string name="image_view_small_exactly_padded">比例恰好与70x70小图像
+             填充Small image scaled to exactly 70x70 with
+        padding
+    </string>
+
+    <!-- 不应该被本地化Shouldn't be localized -->
+    <string name="textColorPrimary">文字颜色主textColorPrimary</string>
+    <string name="textColorSecondary">文字颜色二级textColorSecondary</string>
+    <string name="textColorTertiary">文字颜色三级textColorTertiary</string>
+    <string name="listSeparatorTextViewStyle">列表分隔文本视图样式listSeparatorTextViewStyle</string>
+
+    <!-- ============================ -->
+    <!--  应用程序窗口小部件实例的字符串AppWidget examples strings     -->
+    <!-- ============================ -->
+
+    <string name="appwidget_configure_instructions">这个文本将在日期之前显示我们
+            例如部件。This text will be shown before the date in our
+        example widget.
+    </string>
+    <string name="appwidget_prefix_default">唉海Oh hai</string>
+    <string name="appwidget_text_format"><xliff:g id="prefix">%1$s</xliff:g>:
+        <xliff:g id="time">%2$s</xliff:g>
+    </string>
+
+    <!-- ============================ -->
+    <!--  短信的例子字符串SMS Messaging examples strings  -->
+    <!-- ============================ -->
+
+    <string name="sms_warning">警告：这个演示可以（一次一个）实际发送短信，所以一定要
+            与Android模拟器测试或与您的运营商一个短信包月。
+        WARNING: this demo can send actual text messages (one at a time), so be sure to
+        test with the Android emulator or have a text messaging plan with your carrier.
+    </string>
+    <string name="sms_enable_receiver">启用短信广播接收机Enable SMS broadcast receiver</string>
+    <string name="sms_recipient_label">收件人＃Recipient #</string>
+    <string name="sms_content_label">邮件正文Message Body</string>
+    <string name="sms_send_message">发送Send</string>
+    <string name="sms_speak_string_format">从“％1 $ S”消息：％2 $ SMessage from "%1$s": %2$s</string>
+    <string name="reply">回复Reply</string>
+    <string name="dismiss">关闭Dismiss</string>
+
+    <string name="share">分享Share</string>
+
+    <!-- ============================ -->
+    <!--  Accessibility examples strings 无障碍例子字符串 -->
+    <!-- ============================ -->
+
+    <string name="accessibility_service">Accessibility无障碍服务/Accessibility Service-无障碍服务</string>
+    <string name="accessibility_service_label">时光倒流</string>
+    <string name="accessibility_service_instructions">
+        1.启用话语提示（设置 - >辅助功能 - >话语提示）。
+                \n\n 2。启用探索按触按（设置 - >辅助功能 - >触摸浏览）。
+                \n\n 3。触摸探索时钟应用程序和主屏幕。
+                \n\n 4。进入时钟应用程序并更改警报的时间。
+                \n\n 5。启用ClockBack（设置 - >辅助功能 - > ClockBack）。
+                \n\n 6。进入时钟应用程序并更改警报。
+                \n\n 7。设置的铃声振动模式并更改警报。
+                \n\n 8。设置的铃声为静音模式，并改变报警。
+    </string>
+
+    <string name="value_ringer_audible">铃声发声Ringer audible</string>
+    <string name="value_ringer_vibrate">铃声震动Ringer vibrate</string>
+    <string name="value_ringer_silent">铃声静音Ringer silent</string>
+    <string name="template_screen_on">在屏幕上。卷％1 $ S个百分点。Screen on. Volume %1$s percent.</string>
+    <string name="template_screen_off">屏幕关闭。卷％1 $ S个百分点。Screen off. Volume %1$s percent.</string>
+
+    <string name="accessibility_query_window">Accessibility无障碍服务/Accessibility Node
+        Querying-辅助节点查询
+    </string>
+    <string name="accessibility_query_window_label">查询返回</string>
+    <string name="accessibility_query_window_description">任务应用程序无障碍服务 Task App Accessibility
+        Service
+    </string>
+    <string name="accessibility_query_window_instructions">
+
+        1.启用QueryBack（设置 - >辅助功能 - > QueryBack）。
+        \n\n2.。启用探索按触按（设置 - >辅助功能 - >触摸浏览）。
+        \n\n3.。触摸浏览列表。
+    </string>
+
+    <string name="accessibility_custom_view">Accessibility无障碍服务/Custom View-自定义视图</string>
+    <string name="accessibility_custom_view_instructions">
+        1.启用话语提示（设置 - >辅助功能 - >话语提示）。
+        \n\n2. 启用探索按触按（设置 - >辅助功能 - >触摸浏览）。
+        \n\n3. 触摸浏览/捅的按钮。
+    </string>
+    <string name="accessibility_custom_on">上On</string>
+    <string name="accessibility_custom_off">离开Off</string>
+
+    <string name="task_name">Task</string>
+    <string name="task_complete_template">Task %1$s %2$s</string>
+    <string name="task_complete">is complete</string>
+    <string name="task_not_complete">is not complete</string>
+
+    <!-- =========================== -->
+    <!--  安全API演示串Security API demo strings  -->
+    <!-- =========================== -->
+    <skip/>
+
+    <string name="keystore_entries_list">项列表List of entries:</string>
+
+    <string name="keystore_key_ops_header">按键操作Key operations</string>
+    <string name="keystore_plaintext">明文Plaintext:</string>
+    <string name="keystore_ciphertext">密文Ciphertext:</string>
+    <string name="keystore_sign">登录Sign</string>
+    <string name="keystore_verify">验证Verify</string>
+    <string name="keystore_delete">删除Delete</string>
+
+    <string name="keystore_generating_header">生成Generating</string>
+    <string name="keystore_entry_alias">输入别名Entry alias:</string>
+    <string name="keystore_generate">生成Generate</string>
+    <string name="keystore_no_alias_error">必须提供一个别名Must supply an alias</string>
+
+    <!-- ============================ -->
+    <!--       MMS彩信演示字符串      -->
+    <!-- ============================ -->
+
+    <string name="mms_received_label">最近收到的消息Last received message</string>
+    <string name="mms_recipients_label">地址Addresses</string>
+    <string name="mms_subject_label">主题Subject</string>
+    <string name="mms_text_label">文本Text</string>
+    <string name="mms_send_button_label">发送Send</string>
+
+    <string name="mms_status_sending">发送Sending</string>
+    <string name="mms_status_sent">发确定Sent OK</string>
+    <string name="mms_status_downloaded">下载Downloaded</string>
+    <string name="mms_status_failed">无法Failed</string>
+    <string name="mms_status_downloading">下载Downloading</string>
+
+    <string name="mms_enable_receiver">启用彩信广播接收机Enable MMS broadcast receiver</string>
+
+    <string name="process_text_title">Content/处理文本意图Process Text Intent</string>
+
+    <string name="process_text_received_text_title">收到的短信选Received text selection</string>
+    <string name="process_text_finish_readonly">完成Finish</string>
+    <string name="process_text_finish">替换Replace</string>
+    <string name="process_text_no_text_received">收到任何文字No text received.</string>
+    <string name="process_text_no_text_process_intent_received">尝试在另一个选择一些文本
+            应用程序，并在其选择菜单选项列表中找到这个程序\'的名字。Try selecting some text in another
+        app and find this app\'s name in the list of options for its selection menu.
+    </string>
+    <string name="process_text_send_title">选择文本处理Select text to process</string>
+    <string name="process_text_send_description">此框中选择一段文字来触发
+            文本选择操作模式。在那里，你会发现\“ApiDemos\”。这是因为这个应用程序
+            宣称它可以处理文字处理意向。请尝试选择的行动派
+            所选的文字，这些活动和检索处理的文本回来。Select a piece of text from this box to trigger the
+        text selection action mode. In there, you will find \"ApiDemos\". That is because this app
+        declares it can handle text processing intents. Try selecting that action to send the
+        selected text to that activity and retrieve processed text back.
+    </string>
+</resources>

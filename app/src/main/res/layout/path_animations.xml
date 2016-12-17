@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/path_animation_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/named_components"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="命名组件" />
+
+            <RadioButton
+                android:id="@+id/property_components"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="属性组件" />
+
+            <RadioButton
+                android:id="@+id/multi_int"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多种-int" />
+
+            <RadioButton
+                android:id="@+id/multi_float"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多种-float" />
+
+            <RadioButton
+                android:id="@+id/named_setter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="命名属性" />
+
+            <RadioButton
+                android:id="@+id/property_setter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="属性" />
+        </RadioGroup>
+    </ScrollView>
+
+    <view
+        android:id="@+id/canvas"
+        class="com.example.android.apis.animation.PathAnimations$CanvasView"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/moved_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/frog" />
+    </view>
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_android_api_demos" default="compile.module.android_api_demos">
+  <dirname property="module.android_api_demos.basedir" file="${ant.file.module_android_api_demos}"/>
+  
+  <property name="module.jdk.home.android_api_demos" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.android_api_demos" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.android_api_demos" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.android_api_demos" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="android_api_demos.output.dir" value="${module.android_api_demos.basedir}/build/classes/production/android_api_demos"/>
+  <property name="android_api_demos.testoutput.dir" value="${module.android_api_demos.basedir}/build/classes/test/android_api_demos"/>
+  
+  <path id="android_api_demos.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="android_api_demos.module.production.classpath">
+    <path refid="${module.jdk.classpath.android_api_demos}"/>
+  </path>
+  
+  <path id="android_api_demos.runtime.production.module.classpath">
+    <pathelement location="${android_api_demos.output.dir}"/>
+  </path>
+  
+  <path id="android_api_demos.module.classpath">
+    <path refid="${module.jdk.classpath.android_api_demos}"/>
+    <pathelement location="${android_api_demos.output.dir}"/>
+  </path>
+  
+  <path id="android_api_demos.runtime.module.classpath">
+    <pathelement location="${android_api_demos.testoutput.dir}"/>
+    <pathelement location="${android_api_demos.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.android_api_demos">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.android_api_demos">
+    <patternset refid="excluded.from.module.android_api_demos"/>
+  </patternset>
+  
+  
+  <target name="compile.module.android_api_demos" depends="compile.module.android_api_demos.production,compile.module.android_api_demos.tests" description="Compile module android_api_demos"/>
+  
+  <target name="compile.module.android_api_demos.production" depends="register.custom.compilers" description="Compile module android_api_demos; production classes"/>
+  
+  <target name="compile.module.android_api_demos.tests" depends="register.custom.compilers,compile.module.android_api_demos.production" description="compile module android_api_demos; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.android_api_demos" description="cleanup module">
+    <delete dir="${android_api_demos.output.dir}"/>
+    <delete dir="${android_api_demos.testoutput.dir}"/>
+  </target>
+</project>

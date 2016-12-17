@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_app" default="compile.module.app">
+  <dirname property="module.app.basedir" file="${ant.file.module_app}"/>
+  
+  <property name="module.jdk.home.app" value="${jdk.home.android_api_23_platform}"/>
+  <property name="module.jdk.bin.app" value="${jdk.bin.android_api_23_platform}"/>
+  <property name="module.jdk.classpath.app" value="jdk.classpath.android_api_23_platform"/>
+  
+  <property name="compiler.args.app" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="app.output.dir" value="${module.app.basedir}/build/intermediates/classes/debug"/>
+  <property name="app.testoutput.dir" value="${module.app.basedir}/build/intermediates/classes/test/debug"/>
+  
+  <path id="app.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="app.module.production.classpath">
+    <path refid="${module.jdk.classpath.app}"/>
+    <path refid="library.support-annotations-23.4.0.classpath"/>
+    <path refid="library.animated-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.support-v4-23.4.0.classpath"/>
+    <path refid="library.support-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.appcompat-v7-23.4.0.classpath"/>
+    <path refid="library.logger-1.12.classpath"/>
+  </path>
+  
+  <path id="app.runtime.production.module.classpath">
+    <pathelement location="${app.output.dir}"/>
+    <path refid="library.support-annotations-23.4.0.classpath"/>
+    <path refid="library.animated-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.support-v4-23.4.0.classpath"/>
+    <path refid="library.support-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.appcompat-v7-23.4.0.classpath"/>
+    <path refid="library.logger-1.12.classpath"/>
+  </path>
+  
+  <path id="app.module.classpath">
+    <path refid="${module.jdk.classpath.app}"/>
+    <pathelement location="${app.output.dir}"/>
+    <path refid="library.support-annotations-23.4.0.classpath"/>
+    <path refid="library.animated-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.support-v4-23.4.0.classpath"/>
+    <path refid="library.support-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.appcompat-v7-23.4.0.classpath"/>
+    <path refid="library.logger-1.12.classpath"/>
+  </path>
+  
+  <path id="app.runtime.module.classpath">
+    <pathelement location="${app.testoutput.dir}"/>
+    <pathelement location="${app.output.dir}"/>
+    <path refid="library.support-annotations-23.4.0.classpath"/>
+    <path refid="library.animated-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.support-v4-23.4.0.classpath"/>
+    <path refid="library.support-vector-drawable-23.4.0.classpath"/>
+    <path refid="library.appcompat-v7-23.4.0.classpath"/>
+    <path refid="library.logger-1.12.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.app">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.app">
+    <patternset refid="excluded.from.module.app"/>
+  </patternset>
+  
+  <path id="app.module.sourcepath">
+    <dirset dir="${module.app.basedir}">
+      <include name="build/generated/source/r/debug"/>
+      <include name="build/generated/source/aidl/debug"/>
+      <include name="build/generated/source/buildConfig/debug"/>
+      <include name="build/generated/source/rs/debug"/>
+      <include name="build/generated/source/apt/debug"/>
+      <include name="build/generated/res/rs/debug"/>
+      <include name="build/generated/res/resValues/debug"/>
+      <include name="src/main/res"/>
+      <include name="src/main/resources"/>
+      <include name="src/main/assets"/>
+      <include name="src/main/aidl"/>
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="app.module.test.sourcepath">
+    <dirset dir="${module.app.basedir}">
+      <include name="build/generated/source/r/androidTest/debug"/>
+      <include name="build/generated/source/aidl/androidTest/debug"/>
+      <include name="build/generated/source/buildConfig/androidTest/debug"/>
+      <include name="build/generated/source/rs/androidTest/debug"/>
+      <include name="build/generated/res/rs/androidTest/debug"/>
+      <include name="build/generated/res/resValues/androidTest/debug"/>
+      <include name="src/androidTest/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.app" depends="compile.module.app.production,compile.module.app.tests" description="Compile module app"/>
+  
+  <target name="compile.module.app.production" depends="register.custom.compilers" description="Compile module app; production classes">
+    <mkdir dir="${app.output.dir}"/>
+    <javac2 destdir="${app.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.app}/javac">
+      <compilerarg line="${compiler.args.app}"/>
+      <bootclasspath refid="app.module.bootclasspath"/>
+      <classpath refid="app.module.production.classpath"/>
+      <src refid="app.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.app"/>
+    </javac2>
+    
+    <copy todir="${app.output.dir}">
+      <fileset dir="${module.app.basedir}/build/generated/source/r/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/aidl/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/buildConfig/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/apt/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/res/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/res/resValues/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/src/main/res">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/src/main/assets">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/src/main/aidl">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.app.tests" depends="register.custom.compilers,compile.module.app.production" description="compile module app; test classes" unless="skip.tests">
+    <mkdir dir="${app.testoutput.dir}"/>
+    <javac2 destdir="${app.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.app}/javac">
+      <compilerarg line="${compiler.args.app}"/>
+      <bootclasspath refid="app.module.bootclasspath"/>
+      <classpath refid="app.module.classpath"/>
+      <src refid="app.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.app"/>
+    </javac2>
+    
+    <copy todir="${app.testoutput.dir}">
+      <fileset dir="${module.app.basedir}/build/generated/source/r/androidTest/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/aidl/androidTest/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/buildConfig/androidTest/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/source/rs/androidTest/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/res/rs/androidTest/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/build/generated/res/resValues/androidTest/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.app.basedir}/src/androidTest/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.app" description="cleanup module">
+    <delete dir="${app.output.dir}"/>
+    <delete dir="${app.testoutput.dir}"/>
+  </target>
+</project>

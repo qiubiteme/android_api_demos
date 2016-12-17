@@ -1,0 +1,6 @@
+这个文本存储在一个原始资产。
+
+被读取并放入的TextView这里。
+This text is stored in a raw Asset.
+
+It was read and placed into the TextView here.

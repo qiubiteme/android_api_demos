@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- 演示了使用相对布局来创建一个表单-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blue"
+                android:padding="10dip">
+
+    <!--
+        TextView默认出现在左上方。
+    -->
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/relative_layout_2_instructions"/>
+
+    <!--
+        把在TextView EditText字段
+    -->
+    <EditText
+        android:id="@+id/entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label"/>
+
+    <!--
+        OK按钮EditText字段下面去了。
+这也是父母的右边缘对齐
+(尊重父母的填充)。
+OK按钮先取消按钮
+可以指定相对于OK按钮。OK按钮EditText字段下面去了。
+这也是父母的右边缘对齐
+(尊重父母的填充)。
+OK按钮先取消按钮
+可以指定相对于OK按钮。
+    -->
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/entry"
+        android:layout_marginLeft="10dip"
+        android:text="@string/relative_layout_2_ok"/>
+
+    <!--
+        取消按钮是符合的
+OK按钮,左边的位置。
+自从OK按钮有一个左边框的
+两个按钮之间的一些空间。
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ok"
+        android:layout_toLeftOf="@id/ok"
+        android:text="@string/relative_layout_2_cancel"/>
+
+</RelativeLayout>
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+     版权所有（C）2007年Android开源项目
+
+     在Apache许可2.0版（简称“许可证”）;
+     你可能不使用这个文件除了在遵守许可。
+     您可以在获得许可证的副本
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     除非适用法律要求或书面同意，软件
+     该许可证下发布分布在“原样”的基础，
+     无担保或任何形式的条件，明示或暗示的保证。
+     查看许可证的特定语言的管理权限和
+     根据许可证的限制。
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:showDividers="middle"
+                  android:divider="?android:attr/listDivider">
+
+      <!-- 四TextView的部件，每一个显示包含文本链接 -->
+
+      <!-- 文本1自动linkify之类的网址和电话号码 -->
+
+      <TextView android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:autoLink="all"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/link_text_auto"
+                />
+
+      <!-- 文本2采用含有明确<a>标记指定链接字符串资源。 -->
+      <TextView android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/link_text_manual"
+                />
+
+      <!-- text3 builds the text in the Java code using HTML. -->
+      <TextView android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+      <!-- text4 builds the text in the Java code without using HTML. -->
+      <TextView android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+    </LinearLayout>
+</ScrollView>

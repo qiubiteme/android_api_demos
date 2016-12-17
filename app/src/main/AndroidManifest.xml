@@ -1,0 +1,3365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+版权所有（C）2007年Android开源项目
+
+     在Apache许可2.0版（简称“许可证”）;
+     你可能不使用这个文件除了在遵守许可。
+     您可以在获得许可证的副本
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+	 除非适用法律要求或书面同意，软件
+     该许可证下发布分布在“原样”的基础，
+     无担保或任何形式的条件，明示或暗示的保证。
+     查看许可证的特定语言的管理权限和
+     根据许可证的限制。
+-->
+
+<!-- Declare the contents of this Android application.  The namespace
+     attribute brings in the Android platform namespace, and the package
+     supplies a unique name for the application.  When writing your
+     own application, the package name must be changed from "com.example.*"
+     to come from a domain that you own or have control over.
+	 声明这个Android应用程序的内容。命名空间
+     属性带来了Android平台的命名空间，和包
+     为应用程序提供了一个唯一的名称。当你写
+     自己的应用程序，包名称必须从改变为“com.example。*”
+     来自您拥有或有控制权的域。-->
+<manifest package="com.example.android.apis"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.TRANSMIT_IR"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <!-- For android.media.audiofx.Visualizer -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <!-- We will request access to the camera, saying we require a camera
+         of some sort but not one with autofocus capability. -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+
+    <application android:name="ApiDemosApplication"
+                 android:debuggable="true"
+                 android:hardwareAccelerated="true"
+                 android:icon="@drawable/app_sample_code"
+                 android:label="@string/activity_sample_code"
+                 android:supportsRtl="true">
+
+        <!-- This is how we can request a library but still allow the app
+             to be installed if it doesn't exist.
+             这是我们可以要求一个库，但仍然允许应用程序
+             如果不存在，它被安装。-->
+        <uses-library android:name="com.example.will.never.exist" android:required="false"/>
+
+        <activity android:name="com.example.android.apis.ApiDemos">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--      APPLICATION PACKAGE SAMPLES      -->
+        <!-- ************************************* -->
+
+        <!-- Activity Samples 例子 -->
+
+        <activity android:name=".app.HelloWorld" 
+					 android:label="@string/activity_hello_world">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.DialogActivity"
+                  android:label="@string/activity_dialog"
+                  android:theme="@style/ThemeCurrentDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.CustomDialogActivity"
+                  android:label="@string/activity_custom_dialog"
+                  android:theme="@style/Theme.CustomDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.OverscanActivity"
+                  android:enabled="@bool/atLeastJellyBeanMR2"
+                  android:label="@string/activity_overscan"
+                  android:theme="@android:style/Theme.Holo.NoActionBar.Overscan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.QuickContactsDemo"
+                  android:label="@string/quick_contacts_demo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.WallpaperActivity"
+                  android:label="@string/activity_wallpaper"
+                  android:theme="@style/Theme.Wallpaper">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.TranslucentActivity"
+                  android:label="@string/activity_translucent"
+                  android:theme="@style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.TranslucentBlurActivity"
+                  android:label="@string/activity_translucent_blur"
+                  android:theme="@style/Theme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.Animation" 
+		android:label="@string/activity_animation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.SaveRestoreState"
+                  android:label="@string/activity_save_restore"
+                  android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.PersistentState"
+                  android:label="@string/activity_persistent"
+                  android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActivityRecreate"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/activity_recreate">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FinishAffinity"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="@string/activity_finish_affinity"
+                  android:taskAffinity=":finishing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.SoftInputModes"
+                  android:label="@string/soft_input_modes">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ReceiveResult" 
+		android:label="@string/activity_receive_result">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.SendResult"
+                  android:theme="@style/ThemeDialogWhenLarge">
+        </activity>
+
+        <activity android:name=".app.Forwarding" 
+		android:label="@string/activity_forwarding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ForwardTarget">
+        </activity>
+
+        <activity android:name=".app.RedirectEnter" 
+		android:label="@string/activity_redirect">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.RedirectMain">
+        </activity>
+
+        <activity android:name=".app.RedirectGetter">
+        </activity>
+
+        <!-- This sample doesn't work with the new action bar, so use
+             the old style theme. 
+			 此示例不使用新的操作栏工作，所以使用
+             旧风格的主题-->
+        <activity android:name=".app.CustomTitle"
+                  android:label="@string/activity_custom_title"
+                  android:theme="@android:style/Theme"
+                  android:windowSoftInputMode="stateVisible|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ReorderOnLaunch"
+                  android:label="@string/activity_reorder">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.RotationAnimation"
+                  android:label="@string/activity_rotation_animation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ReorderTwo"/>
+        <activity android:name=".app.ReorderThree"/>
+        <activity android:name=".app.ReorderFour"/>
+
+        <activity android:name=".app.SetWallpaperActivity"
+                  android:label="@string/activity_setwallpaper">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ScreenOrientation"
+                  android:label="@string/activity_screen_orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.PresentationActivity"
+                  android:label="@string/activity_presentation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.PresentationWithMediaRouterActivity"
+                  android:label="@string/activity_presentation_with_media_router">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.SecureWindowActivity"
+                  android:label="@string/activity_secure_window">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.SecureDialogActivity"
+                  android:label="@string/activity_secure_dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.SecureSurfaceViewActivity"
+                  android:label="@string/activity_secure_surface_view">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Fragment Samples 例子 -->
+
+        <activity android:name=".app.FragmentAlertDialog"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_alert_dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentArguments"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_arguments">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentCustomAnimations"
+                  android:enabled="@bool/atLeastHoneycombMR2"
+                  android:label="@string/fragment_custom_animations">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentHideShow"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_hide_show"
+                  android:windowSoftInputMode="stateUnchanged">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentContextMenu"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_context_menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentDialog"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentDialogOrActivity"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_dialog_or_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentLayout"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_layout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentLayout$DetailsActivity"
+                  android:enabled="@bool/atLeastHoneycomb"/>
+
+        <activity android:name=".app.FragmentListArray"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_list_array">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentMenu"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentNestingTabs"
+                  android:enabled="@bool/atLeastJellyBeanMR1"
+                  android:label="@string/fragment_nesting_tabs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentRetainInstance"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_retain_instance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentReceiveResult"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_receive_result">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentStack"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_stack">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.FragmentTabs"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_tabs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Loader Samples 加载的例子 -->
+
+        <activity android:name=".app.LoaderCursor"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/loader_cursor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.LoaderCustom"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/loader_custom">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- BEGIN_INCLUDE(loader_throttle) -->
+        <activity android:name=".app.LoaderThrottle"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/loader_throttle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <provider android:name=".app.LoaderThrottle$SimpleProvider"
+                  android:authorities="com.example.android.apis.app.LoaderThrottle"
+                  android:enabled="@bool/atLeastHoneycomb"/>
+        <!-- END_INCLUDE(loader_throttle) -->
+
+        <activity android:name=".app.LoaderRetained"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/loader_retained">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Intent Samples intent例子 -->
+
+        <activity android:name=".app.Intents" 
+		android:label="@string/activity_intents">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.IntentActivityFlags"
+                  android:label="@string/activity_intent_activity_flags">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Service Samples 例子 -->
+
+        <service android:name=".app.LocalService" 
+		android:stopWithTask="true"/>
+
+        <activity android:name=".app.LocalServiceActivities$Controller"
+                  android:label="@string/activity_local_service_controller"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.LocalServiceActivities$Binding"
+                  android:label="@string/activity_local_service_binding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- BEGIN_INCLUDE(remote_service_declaration) -->
+        <service android:name=".app.MessengerService"
+                 android:process=":remote"/>
+        <!-- END_INCLUDE(remote_service_declaration) -->
+
+        <activity android:name=".app.MessengerServiceActivities$Binding"
+                  android:label="@string/activity_messenger_service_binding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".app.RemoteService" 
+		android:process=":remote"/>
+
+        <activity android:name=".app.RemoteService$Controller"
+                  android:label="@string/activity_remote_service_controller"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.RemoteService$Binding"
+                  android:label="@string/activity_remote_service_binding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.RemoteService$BindingOptions"
+                  android:label="@string/activity_remote_service_binding_options">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".app.ServiceStartArguments"/>
+
+        <activity android:name=".app.ServiceStartArguments$Controller"
+                  android:label="@string/activity_service_start_arguments_controller"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".app.ForegroundService"/>
+
+        <activity android:name=".app.ForegroundService$Controller"
+                  android:label="@string/activity_foreground_service_controller"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.IsolatedService$Controller"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="@string/activity_isolated_service_controller"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".app.IsolatedService" 
+		android:enabled="@bool/atLeastJellyBean"
+                 android:isolatedProcess="true"/>
+        <service android:name=".app.IsolatedService2" android:enabled="@bool/atLeastJellyBean"
+                 android:isolatedProcess="true"/>
+
+        <!-- 报警例子 Alarm Samples -->
+
+        <receiver android:name=".app.OneShotAlarm" android:process=":remote"/>
+
+        <receiver android:name=".app.RepeatingAlarm" android:process=":remote"/>
+
+        <activity android:name=".app.AlarmController"
+                  android:label="@string/activity_alarm_controller">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".app.AlarmService_Service" android:process=":remote"/>
+
+        <activity android:name=".app.AlarmService" 
+		android:label="@string/activity_alarm_service">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 存根内存测试Stub for memory testing. -->
+
+        <receiver android:name=".app.DoNothing"
+                  android:exported="true" android:process=":empty"/>
+
+        <!-- ============================ -->
+        <!--  Accessibility examples 无障碍例子     -->
+        <!-- ============================ -->
+
+        <activity android:name=".accessibility.ClockBackActivity"
+                  android:label="@string/accessibility_service">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".accessibility.ClockBackService"
+                 android:label="@string/accessibility_service_label"
+                 android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".accessibility.TaskListActivity"
+                  android:enabled="@bool/atLeastIceCreamSandwich"
+                  android:label="@string/accessibility_query_window">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".accessibility.TaskBackService"
+                 android:enabled="@bool/atLeastIceCreamSandwich"
+                 android:label="@string/accessibility_query_window_label"
+                 android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/taskbackconfig"/>
+        </service>
+
+        <activity android:name=".accessibility.CustomViewAccessibilityActivity"
+                  android:enabled="@bool/atLeastIceCreamSandwich"
+                  android:label="@string/accessibility_custom_view">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+
+		<!--仪表例子 Instrumentation Samples-->
+        <activity android:name=".app.LocalSample" 
+		android:label="@string/activity_local_sample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <!-- category android:name="android.intent.category.SAMPLE_CODE" -->
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ContactsFilter"
+                  android:label="@string/activity_contacts_filter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+				<!-- category android:name="android.intent.category.SAMPLE_CODE" -->
+            </intent-filter>
+        </activity>
+
+
+        <!-- 通知栏例子 Notifications samples -->
+
+        <activity android:name=".app.NotifyWithText"
+                  android:label="App/Notification通知栏/NotifyWithText-通知文本">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.IncomingMessage"
+                  android:label="App/Notification通知栏/IncomingMessage传入邮件">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.IncomingMessageView"
+                  android:label="App/Notification通知栏/IncomingMessageView-传入消息查看">
+        </activity>
+
+        <!-- BEGIN_INCLUDE(interstitial_affinity) -->
+        <activity android:name=".app.IncomingMessageInterstitial"
+                  android:excludeFromRecents="true"
+                  android:label="You have messages"
+                  android:launchMode="singleTask"
+                  android:taskAffinity=""
+                  android:theme="@style/ThemeCurrentDialog">
+        </activity>
+        <!-- END_INCLUDE(interstitial_affinity) -->
+
+        <!-- 这是用于显示由用户选择的通知
+             从StatusBarNotifications。请注意这里的配置使
+             ，无论用户正在做的顶部的活性层，
+             让他们按返回
+This is used to display a notification selected by the user
+             from StatusBarNotifications.  Note the configuration here so
+             that the activity layers on top of whatever the user is doing,
+             allowing them to press back to return. -->
+        <activity android:name=".app.NotificationDisplay"
+                  android:excludeFromRecents="true"
+                  android:noHistory="true"
+                  android:taskAffinity=""
+                  android:theme="@style/Theme.Transparent">
+        </activity>
+
+        <activity android:name=".app.StatusBarNotifications"
+                  android:label="App/Notification通知栏/Status Bar-状态栏"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".app.NotifyingService"/>
+
+        <activity android:name=".app.NotifyingController"
+                  android:label="App/Notification通知栏/Notifying Service Controller通知服务控制器">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 对话框例子 -Dialog samples -->
+        <activity android:name=".app.AlertDialogSamples"
+                  android:label="@string/activity_alert_dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 搜索例子  Search Samples -->
+  <!--  <！ - 这个活动代表在应用程序中的“典型”活动从哪个 - >
+            <！ - 用户将被允许以调用搜索功能。如下面所指出的，定义 - >
+            <！ - android.app.default_searchable的是在应用更典型地处理 - >
+            <！ - 级别，它可以作为所有活动的默认值。 - >-->
+        <!-- This activity represents a "typical" activity in your application from which the -->
+        <!-- user would be allowed to invoke a search function.  As noted below, the definition -->
+        <!-- of android.app.default_searchable is more typically handled at the application -->
+        <!-- level, where it can serve as a default for all of your activities. -->
+
+        <activity android:name=".app.SearchInvoke"
+                  android:label="@string/search_invoke">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+
+            <!-- This metadata entry causes .app.SearchQueryResults to be the default context -->
+            <!-- whenever the user invokes search while in this Activity. -->
+            <meta-data android:name="android.app.default_searchable"
+                       android:value=".app.SearchQueryResults"/>
+
+            <!-- This is not the typical way to define android.app.default_searchable, -->
+            <!-- and we show it here only because we wish to confine the search demo to this -->
+            <!-- section of the ApiDemos application. -->
+
+            <!-- For typical applications, it's simpler to define android.app.default_searchable -->
+            <!-- just once, at the application level, where it serves as a default for all of -->
+            <!-- the Activities in your package. -->
+        </activity>
+
+        <!-- This activity represents the "search" activity in your application, in which -->
+        <!-- search results are gathered and displayed. -->
+
+        <activity android:name=".app.SearchQueryResults"
+                  android:label="@string/search_query_results">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+
+            <!-- This intent-filter identifies this activity as "searchable" -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            <!-- This metadata entry provides further configuration details for searches -->
+            <!-- that are handled by this activity. -->
+
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchable"/>
+        </activity>
+
+        <!-- This provider declaration informs the Search Manager that you have a provider of -->
+        <!-- Search suggestions, and provides information about how to access it. -->
+
+        <provider android:name=".app.SearchSuggestionSampleProvider"
+                  android:authorities="com.example.android.apis.SuggestionProvider"/>
+
+        <!-- Shortcuts Samples -->
+
+        <!-- This section of sample code shows how your application can add shortcuts to -->
+        <!-- the launcher (home screen).  Shortcuts have a three step life cycle. -->
+
+        <!-- 1.  Your application offers to provide shortcuts to the launcher.  When -->
+        <!--     the user installs a shortcut, an activity within your application -->
+        <!--     generates the actual shortcut and returns it to the launcher, where it -->
+        <!--     is shown to the user as an icon. -->
+
+        <!-- 2.  Any time the user clicks on an installed shortcut, an intent is sent. -->
+        <!--     Typically this would then be handled as necessary by an activity within -->
+        <!--     your application. -->
+
+        <!-- 3.  The shortcut is deleted.  There is no notification to your application. -->
+
+        <!-- In order provide shortcuts from your application, you provide three things: -->
+
+        <!-- 1.  An intent-filter declaring your ability to provide shortcuts -->
+        <!-- 2.  Code within the activity to provide the shortcuts as requested -->
+        <!-- 3.  Code elsewhere within your activity, if appropriate, to receive -->
+        <!--     intents from the shortcut itself. -->
+
+        <activity android:name=".app.LauncherShortcuts"
+                  android:label="@string/shortcuts">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+
+        </activity>
+
+        <!-- 建议您使用一个活动——别名为“创造E_快捷方式”
+        It is recommended that you use an activity-alias to provide the "CREATE_SHORTCUT" -->
+        <!-- 意图过滤器。这给了你一个设置文本(和可选的方法
+        intent-filter.  This gives you a way to set the text (and optionally the -->
+        <!-- 图标),将发射器创建——快捷方式的用户界面。
+        icon) that will be seen in the launcher's create-shortcut user interface. -->
+
+        <activity-alias android:name=".app.CreateShortcuts"
+                        android:label="@string/sample_shortcuts"
+                        android:targetActivity=".app.LauncherShortcuts">
+
+            <!--  这个意图过滤器允许您创建快捷方式的发射器。 -->
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity-alias>
+
+        <!-- 菜单例子 -->
+
+        <activity android:name=".app.MenuInflateFromXml"
+                  android:label="@string/menu_from_xml_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 设备管理例子 -->
+
+        <activity android:name=".app.DeviceAdminSample"
+                  android:label="@string/activity_sample_device_admin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!--开始_包括(设备_管理_声明)  -->
+        <receiver android:name=".app.DeviceAdminSample$DeviceAdminSampleReceiver"
+                  android:description="@string/sample_device_admin_description"
+                  android:label="@string/sample_device_admin"
+                  android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                       android:resource="@xml/device_admin_sample"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <!-- 结束__包括：（设备__管理员声明） -->
+
+        <!-- 语音识别的样本 -->
+
+        <activity android:name=".app.VoiceRecognition" 
+		android:label="@string/voice_recognition">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 文本-转语音例子 -->
+
+        <activity android:name=".app.TextToSpeechActivity" 
+		android:label="@string/text_to_speech">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 操作栏例子 -->
+        <activity android:name=".app.ActionBarMechanics"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/action_bar_mechanics">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarUsage"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/action_bar_usage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarDisplayOptions"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/action_bar_display_options"
+                  android:logo="@drawable/apidemo_androidlogo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarTabs"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/action_bar_tabs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarSettingsActionProviderActivity"
+                  android:enabled="@bool/atLeastIceCreamSandwich"
+                  android:label="@string/action_bar_settings_action_provider">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarShareActionProviderActivity"
+                  android:enabled="@bool/atLeastIceCreamSandwich"
+                  android:label="@string/action_bar_share_action_provider">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarNavigation"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="@string/action_bar_navigation"
+                  android:launchMode="singleTask"
+                  android:taskAffinity=":bar_navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.ActionBarNavigationTarget"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="@string/action_bar_navigation_target"
+                  android:parentActivityName=".app.ActionBarNavigation"
+                  android:taskAffinity=":bar_navigation">
+        </activity>
+
+        <activity android:name=".app.PrintBitmap"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="@string/print_bitmap">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.PrintHtmlFromScreen"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="@string/print_html_from_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.PrintHtmlOffScreen"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="@string/print_html_off_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".app.PrintCustomContent"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="@string/print_custom_content">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 应用程序更新例子 -->
+
+        <!-- BEGIN_INCLUDE(app_update_declaration) 开始_包括(应用_更新_宣言)-->
+        <receiver android:name=".app.AppUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <!-- END_INCLUDE(app_update_declaration) 结束_包括(应用_更新_宣言)-->
+
+        <receiver android:name=".app.AppUpdateSspReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package" android:ssp="com.example.android.apis"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- ************************************* -->
+        <!--       偏好包例子     -->
+        <!-- ************************************* -->
+
+        <activity android:name=".preference.FragmentPreferences"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/fragment_preferences">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.PreferenceWithHeaders"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/preference_with_headers">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.PreferencesFromXml"
+                  android:label="@string/preferences_from_xml">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.PreferencesFromCode"
+                  android:label="@string/preferences_from_code">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.AdvancedPreferences"
+                  android:label="@string/advanced_preferences">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.LaunchingPreferences"
+                  android:label="@string/launching_preferences">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.PreferenceDependencies"
+                  android:label="@string/preference_dependencies">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.DefaultValues" android:label="@string/default_values">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.SwitchPreference"
+                  android:enabled="@bool/atLeastIceCreamSandwich"
+                  android:label="@string/switch_preference">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--        内容包样品        -->
+        <!-- ************************************* -->
+
+        <activity android:name=".content.ClipboardSample"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="@string/activity_clipboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ExternalStorage"
+                  android:label="@string/activity_external_storage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.StyledText" android:label="@string/activity_styled_text">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.TextUndoActivity"
+                  android:label="@string/activity_text_undo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ResourcesLayoutReference"
+                  android:label="@string/activity_resources_layout_reference">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ResourcesWidthAndHeight"
+                  android:enabled="@bool/atLeastHoneycombMR2"
+                  android:label="@string/activity_resources_width_and_height">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ResourcesSmallestWidth"
+                  android:enabled="@bool/atLeastHoneycombMR2"
+                  android:label="@string/activity_resources_smallest_width">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ReadAsset" android:label="@string/activity_read_asset">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.EMBED"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ResourcesSample"
+                  android:label="@string/activity_resources">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.PickContact" android:label="@string/activity_pick_contact">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ShareContent"
+                  android:label="@string/activity_share_content">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ChangedContacts"
+                  android:label="@string/activity_changed_contact">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.InstallApk" android:enabled="@bool/atLeastHoneycombMR2"
+                  android:label="@string/activity_install_apk">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.DocumentsSample"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="@string/activity_documents">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <provider android:name=".content.FileProvider"
+                  android:authorities="com.example.android.apis.content.FileProvider"
+                  android:enabled="@bool/atLeastHoneycombMR2"
+                  android:exported="false"
+                  android:grantUriPermissions="true"/>
+
+        <activity android:name=".content.ProcessTextLauncher"
+                  android:label="@string/process_text_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".content.ProcessText">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--     硬件包样品          -->
+        <!-- ************************************* -->
+
+        <activity android:name=".hardware.ConsumerIr" android:label="Hardware/Consumer IR">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--     操作系统包例子                -->
+        <!-- ************************************* -->
+
+        <activity android:name=".os.MorseCode" android:label="OS/震动Morse Code">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".os.TriggerSensors" android:label="OS/触发传感器TriggerSensors">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".os.RotationVectorDemo" android:label="OS/旋转感应Rotation Vector"
+                  android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".os.SmsMessagingDemo" android:label="OS/短信发送SMS Messaging">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".os.MmsMessagingDemo" android:label="OS/彩信MMS Messaging">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="mms"/>
+                <data android:scheme="mmsto"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".os.SmsReceivedDialog"
+                  android:launchMode="singleInstance"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <receiver android:name=".os.SmsMessageReceiver" android:enabled="false"
+                  android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_DELIVER"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".os.MmsWapPushReceiver" android:enabled="false"
+                  android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".os.HeadlessSmsSendService"
+                 android:exported="true"
+                 android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
+                <data android:scheme="mms"/>
+                <data android:scheme="mmsto"/>
+            </intent-filter>
+        </service>
+
+        <provider android:name=".os.MmsFileProvider"
+                  android:authorities="com.example.android.apis.os.MmsFileProvider"
+                  android:enabled="@bool/atLeastLRelease"
+                  android:exported="false"
+                  android:grantUriPermissions="true"/>
+
+         <!-- ************************************* -->
+        <!--     ANDROID。动画包例子         -->
+        <!-- ************************************* -->
+
+        <activity android:name=".animation.ActivityTransition"
+                  android:enabled="@bool/atLeastLRelease"
+                  android:label="Animation动画/Activity Transition -Activity转场动画"
+                  android:theme="@style/ActivityTransitionTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.ActivityTransitionDetails"
+                  android:enabled="@bool/atLeastLRelease"
+                  android:label="Animation动画/Details of a specific thingy"
+                  android:theme="@style/ActivityTransitionTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.AnimationLoading"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Loading加载动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.AnimationCloning"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Cloning垂直平移动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.AnimationSeeking"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Seeking进度条关联垂直平移动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.AnimatorEvents"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Events平移事件动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.BouncingBalls"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Bouncing Balls弹弹球动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.CustomEvaluator"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Custom Evaluator自定义组合动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.ListFlipper"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/View Flip-3D翻转动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.ReversingAnimation"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Reversing模拟倒车动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.MultiPropertyAnimation"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Multiple Properties-多个属性-组合动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.LayoutAnimations"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Layout Animations布局动画-动态添加和删除View动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.LayoutAnimationsHideShow"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Hide-Show Animations-隐藏，显示View动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.LayoutAnimationsByDefault"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Default Layout Animations-默认布局添加与清除View动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.Transitions"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Simple Transitions简单属性的转换">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animation.PathAnimations"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Animation动画/Path Animations路径，轨迹动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--     动画包例子        -->
+        <!-- ************************************* -->
+
+        <activity android:name=".animation.Transition3d"
+                  android:label="Views/动画Animation/3D Transition 过渡动画">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--      视图/小部件包样品     -->
+        <!-- ************************************* -->
+
+        <activity android:name=".view.ChronometerDemo"
+                  android:label="Views/Chronometer简单的计时器">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.WebView1"
+                  android:label="Views/WebView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RelativeLayout1"
+                  android:label="Views/Layouts/RelativeLayout相对布局/1. RelativeLayout简单示例">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RelativeLayout2"
+                  android:label="Views/Layouts/RelativeLayout相对布局/2. RelativeLayout简单示例">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout1"
+                  android:label="Views/Layouts/LinearLayout线性布局/01. LinearLayout简单的垂直布局">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout2"
+                  android:label="Views/Layouts/LinearLayout线性布局/02. LinearLayout简单的垂直布局(填满屏幕的)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout3"
+                  android:label="Views/Layouts/LinearLayout线性布局/03. LinearLayout简单的垂直布局(带权重分配)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout4"
+                  android:label="Views/Layouts/LinearLayout线性布局/04. LinearLayout简单的水平布局(带权重分配)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout5"
+                  android:label="Views/Layouts/LinearLayout线性布局/05. LinearLayout简单的水平布局(嵌套布局形式)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout6"
+                  android:label="Views/Layouts/LinearLayout线性布局/06. LinearLayout简单的垂直布局(统一的大小)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout7"
+                  android:label="Views/Layouts/LinearLayout线性布局/07. LinearLayout简单的水平布局(带权重包裹平分父控件)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout8"
+                  android:label="Views/Layouts/LinearLayout线性布局/08. LinearLayout布局(通过Menu动态设置显示位置)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout9"
+                  android:label="Views/Layouts/LinearLayout线性布局/09. LinearLayout布局(通过Weight权重分配显示空间) ">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LinearLayout10"
+                  android:label="Views/Layouts/LinearLayout线性布局/10. LinearLayout布局(背景组EditText选择器) ">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.CustomLayoutActivity"
+                  android:label="Views/Layouts/自定义控件/CustomLayout自定义控件（extends ViewGroup） ">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RadioGroup1"
+                  android:label="Views/Radio Group-单选按钮组">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ScrollView1"
+                  android:label="Views/Layouts/ScrollView/1. ScrollView1不满一频Short">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ScrollView2"
+                  android:label="Views/Layouts/ScrollView/2. ScrollView2-滚动视图Long">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.HorizontalScrollView1"
+                  android:label="Views/Layouts/HorizontalScrollView水平滚动的（Scrollview）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Tabs1"
+                  android:label="Views/TabActivitys使用/1. TabActivity（标签切换）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Tabs2"
+                  android:label="Views/TabActivitys使用/2. TabActivity（通过标签工厂切换标签内容，标签带图标，TabActivity无主题不显示图标）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Tabs3"
+                  android:label="Views/TabActivitys使用/3. TabActivity（通过intent启动的例子）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Tabs4"
+                  android:label="Views/TabActivitys使用/4. TabActivity（同TabActivity2 一样，带主题，显示图标）"
+                  android:theme="@android:style/Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Tabs5"
+                  android:label="Views/TabActivitys使用/5. TabActivity（滚动显示的tabactivity标签视图）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Tabs6"
+                  android:label="Views/TabActivitys使用/6. TabActivity（使用TabWidget权重）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.InternalSelectionScroll"
+                  android:label="Views/Layouts/自定义控件/3. 滚动的矩形自定义控件（extends View）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout1"
+                  android:label="Views/Layouts/TableLayout表格布局/01. 基本TabLayout布局">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout2"
+                  android:label="Views/Layouts/TableLayout表格布局/02.  基本TabLayout布局（带空单元格）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout3"
+                  android:label="Views/Layouts/TableLayout表格布局/03. 基本TabLayout布局（行，列不同，长内容单元格适配）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout4"
+                  android:label="Views/Layouts/TableLayout表格布局/04. 基本TabLayout布局（指定列的位置属性，android:gravity=right）">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout5"
+                  android:label="Views/Layouts/TableLayout表格布局/05. Spanning and Stretchable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout6"
+                  android:label="Views/Layouts/TableLayout表格布局/06. More Spanning and Stretchable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout7"
+                  android:label="Views/Layouts/TableLayout表格布局/07. Column Collapse">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout8"
+                  android:label="Views/Layouts/TableLayout表格布局/08. Toggle Stretch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout9"
+                  android:label="Views/Layouts/TableLayout表格布局/09. Toggle Shrink">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout10"
+                  android:label="Views/Layouts/TableLayout表格布局/10. Simple Form">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout11"
+                  android:label="Views/Layouts/TableLayout表格布局/11. Gravity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TableLayout12"
+                  android:label="Views/Layouts/TableLayout表格布局/12. Cell Spanning">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.GridLayout1"
+                  android:label="Views/Layouts/网格布局GridLayout/1. 简单的形式Simple Form">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.GridLayout2"
+                  android:label="Views/Layouts/网格布局GridLayout/2. 简单的布局样式Form (XML)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.GridLayout3"
+                  android:label="Views/Layouts/网格布局GridLayout/3. 简单的java代码样式Form (Java)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Baseline1" android:label="Views/Layouts/Baseline/1. 在顶部Top">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Baseline2" android:label="Views/Layouts/Baseline/2. 在底部Bottom">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Baseline3" android:label="Views/Layouts/Baseline/3. 居中Center">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Baseline4"
+                  android:label="Views/Layouts/Baseline/4. 到处Everywhere">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Baseline6"
+                  android:label="Views/Layouts/Baseline/5. 多行Multi-line">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Baseline7" android:label="Views/Layouts/Baseline/6. 相对的Relative">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.BaselineNested1"
+                  android:label="Views/Layouts/Baseline/嵌套示例Nested Example 1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.BaselineNested2"
+                  android:label="Views/Layouts/Baseline/嵌套示例Nested Example 2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.BaselineNested3"
+                  android:label="Views/Layouts/Baseline/嵌套示例Nested Example 3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ScrollBar1" android:label="Views/滚动条ScrollBars/1. 基本Basic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ScrollBar2" android:label="Views/滚动条ScrollBars/2. 花俏Fancy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ScrollBar3" android:label="Views/滚动条ScrollBars/3. 样式Style">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Visibility1" android:label="Views/Visibility能见度的三种情况">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List1" android:label="Views/ListActivity/01. Array">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List2" android:label="Views/ListActivity/02. 游标（人名)Cursor (People)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List3" android:label="Views/ListActivity/03. 游标（电话）Cursor (Phones)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List4" android:label="Views/ListActivity/04. 列表适配器ListAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List5" android:label="Views/ListActivity/05. 分离器Separators">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List6" 
+		android:label="Views/ListActivity/06. ListAdapter折叠ListAdapter Collapsed">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List7" 
+		android:label="Views/ListActivity/07. 光标（手机）Cursor(Phones)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List8" android:label="Views/ListActivity/08. 相片Photos">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List9" android:label="Views/ListActivity/09. 带导航标签Array (Overlay)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List10" android:label="Views/ListActivity/10. 单项选择列表Single choice list">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List11" 
+		android:label="Views/ListActivity/11. 多选列表Multiple choice list">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List12" android:label="Views/ListActivity/12. 文本编辑的listAdapterTranscript">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List13" android:label="Views/ListActivity/13. 基本的适配器Slow Adapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List14" 
+		android:label="Views/ListActivity/14. 高效的适配器Efficient Adapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List15" 
+		android:label="Views/ListActivity/15. 长按选择模式Selection Mode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List16" 
+		android:label="Views/ListActivity/16. 高亮多选择模式Border selection mode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.List17" 
+		android:label="Views/ListActivity/17. 高亮选中条目Activate items">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ExpandableList1"
+                  android:label="Views/扩展列表Expandable Lists/1. 自定义适配器Custom Adapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ExpandableList2"
+                  android:label="Views/扩展列表Expandable Lists/2. 光标（人民）Cursor (People)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ExpandableList3"
+                  android:label="Views/扩展列表Expandable Lists/3. 简单的适配器Simple Adapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.CustomView1"
+                  android:label="Views/自定义View-Custom"
+                  android:theme="@android:style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Spinner1" 
+		 android:label="Views/Spinner控件例子">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Grid1" 
+		android:label="Views/网格Grid/1. 图标网格Icon Grid">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Grid2" android:label="Views/网格Grid/2. 照片网格Photo Grid">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Grid3"
+                  android:label="Views/网格Grid/3. 选择模式Selection Mode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ImageView1"
+                  android:label="Views/图片浏览ImageView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.EditTextDemo"
+                  android:label="Views/文本Text/文本编辑EditText">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".text.Link"
+                  android:label="Views/文本Text/富文本Linkify">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".text.LogTextBox1"
+                  android:label="Views/文本Text/追加指定文本TextViewLogTextBox">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".text.Marquee"
+                  android:label="Views/文本Text/移动字幕效果Marquee">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TextClockDemo"
+                  android:label="Views/文本Text/TextClock">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TextSwitcher1"
+                  android:label="Views/文本Text/TextSwitcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TextViewDemo"
+                  android:label="Views/文本Text/TextView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ImageButton1"
+                  android:label="Views/图像按钮ImageButton">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Animation1" 
+		android:label="Views/动画Animation/抖动动画Shake">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Animation2" 
+		android:label="Views/动画Animation/滚动动画Push">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Animation3" 
+		android:label="Views/动画Animation/插值动画Interpolators">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation1"
+                  android:label="Views/布局动画Layout Animation/1. 网格渐变Grid Fade">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation2"
+                  android:label="Views/布局动画Layout Animation/2. 瀑布流动画List Cascade">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation3"
+                  android:label="Views/布局动画Layout Animation/3. 相反的顺序流Reverse Order">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation4"
+                  android:label="Views/布局动画Layout Animation/4. 随机动画Randomize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation5"
+                  android:label="Views/布局动画Layout Animation/5. 格网方向向上Grid Direction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation6"
+                  android:label="Views/布局动画Layout Animation/6. 波浪滚动动画Wave Scale">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.LayoutAnimation7"
+                  android:label="Views/布局动画Layout Animation/7. 嵌套动画Nested Animations">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls1"
+                  android:label="Views/主题控件样式Controls/1. 亮色主题Light Theme"
+                  android:theme="@android:style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls2"
+                  android:label="Views/主题控件样式Controls/2. 黑暗主题Dark Theme"
+                  android:theme="@android:style/Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls3"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Views/主题控件样式Controls/3. 全息亮色主题Holo Light Theme"
+                  android:theme="@android:style/Theme.Holo.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls4"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:label="Views/主题控件样式Controls/4. 全息黑暗主题Holo Dark Theme"
+                  android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls5"
+                  android:enabled="@bool/atLeastLRelease"
+                  android:label="Views/主题控件样式Controls/5. 浅色主题Material Light Theme"
+                  android:theme="@android:style/Theme.Material.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls6"
+                  android:enabled="@bool/atLeastLRelease"
+                  android:label="Views/主题控件样式Controls/6. 深色主题Material Dark Theme"
+                  android:theme="@android:style/Theme.Material">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls7"
+                  android:label="Views/主题控件样式Controls/7. 自定义主题Custom Theme"
+                  android:theme="@style/CustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls8"
+                  android:label="Views/主题控件样式Controls/8. 当前或旧主题Current or Old Theme"
+                  android:theme="@style/ThemeCurrent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Controls9"
+                  android:label="Views/主题控件样式Controls/9. 默认主题Default Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Buttons1"
+                  android:label="Views/按钮Buttons">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.AutoComplete1"
+                  android:label="Views/文本嵌入自动提示Auto Complete/1. 文本嵌入自动提示Screen Top">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.AutoComplete2"
+                  android:label="Views/文本嵌入自动提示Auto Complete/2. 文本嵌入自动提示Screen Bottom">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.AutoComplete3" 
+		android:label="Views/文本嵌入自动提示Auto Complete/3. 文本嵌入自动提示Scroll">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.AutoComplete4"
+                  android:label="Views/文本嵌入自动提示Auto Complete/4. 文本嵌入自动提示联系人Contacts">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.AutoComplete5"
+                  android:label="Views/文本嵌入自动提示Auto Complete/5. 文本嵌入自动提示联系人Contacts with Hint">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.AutoComplete6"
+                  android:label="Views/文本嵌入自动提示Auto Complete/6. 文本嵌入自动提示Multiple items">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ProgressBar1"
+                  android:label="Views/进度条Progress Bar/1. 水平的Incremental">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ProgressBar2" 
+		android:label="Views/进度条Progress Bar/2. 圆形进度条Smooth">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ProgressBar3" 
+		android:label="Views/进度条Progress Bar/3. 对话框进度条Dialogs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ProgressBar4"
+                  android:label="Views/进度条Progress Bar/4. 标题栏进度条In Title Bar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SeekBar1" 
+		android:label="Views/滑动进度条Seek Bar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RatingBar1" 
+		android:label="Views/星级评定Rating Bar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Focus1" 
+		android:label="Views/焦点与布局Focus/1. 垂直布局Vertical">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Focus2" 
+		android:label="Views/焦点与布局Focus/2. 水平布局Horizontal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Focus3" 
+		android:label="Views/焦点与布局Focus/3. 圆形布局Circular">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.InternalSelectionFocus"
+                  android:label="Views/焦点与布局Focus/4. 代码写布局Internal Selection">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Focus5" 
+		android:label="Views/焦点与布局Focus/5. 顺序（表格顺序）Sequential (Tab Order)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.WindowFocusObserver"
+                  android:label="Views/焦点与布局Focus/6. 窗口焦点观察Window Focus Observer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.DateWidgets1" 
+		android:label="Views/日期窗口小部件Date Widgets/1. 对话框样式Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.DateWidgets2" 
+		android:label="Views/日期窗口小部件Date Widgets/2. 表盘样式Inline">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.PopupMenu1" 
+		android:label="Views/弹出菜单Popup Menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SearchViewActionBar"
+                  android:label="Views/搜索查看Search View/Action Bar搜索"
+                  android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable"
+                       android:value=".app.SearchQueryResults"/>
+        </activity>
+
+        <activity android:name=".view.SearchViewAlwaysVisible"
+                  android:label="Views/搜索查看Search View/始终展开搜索结果Always Expanded"
+                  android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable"
+                       android:value=".app.SearchQueryResults"/>
+        </activity>
+
+        <activity android:name=".view.SearchViewFilterMode" 
+		android:label="Views/搜索查看Search View/筛选Filter"
+                  android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RotatingButton" 
+		android:label="Views/旋转按钮Rotating Button">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SecureView" 
+		android:label="Views/安全浏览Secure View">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SplitTouchView"
+                  android:label="Views/双列表项ListView-Splitting Touches across Views">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.DragAndDropDemo"
+                  android:enabled="@bool/atLeastHoneycomb"
+                  android:hardwareAccelerated="false"
+                  android:label="Views/拖放Drag and Drop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.GameControllerInput"
+                  android:label="Views/游戏控制器输入Game Controller Input">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Hover" 
+		android:label="Views/悬停事件Hover Events">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SystemUIModes"
+                  android:enabled="@bool/atLeastJellyBeanMR2"
+                  android:label="Views/系统UI能见度System UI Visibility/系统UI模式System UI Modes"
+                  android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SystemUIModesOverlay"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="Views/系统UI能见度System UI Visibility/系统UI覆盖模式System UI Modes Overlay"
+                  android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ContentBrowserActivity"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="Views/系统UI能见度System UI Visibility/内容浏览器Content Browser"
+                  android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+                  android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.ContentBrowserNavActivity"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="Views/系统UI能见度System UI Visibility/内容浏览器导航栏Content Browser Nav Bar"
+                  android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+                  android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.VideoPlayerActivity"
+                  android:enabled="@bool/atLeastJellyBean"
+                  android:label="Views/系统UI能见度System UI Visibility/视频播放器Video Player"
+                  android:theme="@android:style/Theme.Holo"
+                  android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.TranslucentBarsActivity"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="Views/系统UI能见度System UI Visibility/半透明Translucent Bars"
+                  android:theme="@android:style/Theme.Holo.NoActionBar.TranslucentDecor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.GameActivity"
+                  android:enabled="@bool/atLeastKitKat"
+                  android:label="Views/系统UI能见度System UI Visibility/游戏Game"
+                  android:theme="@android:style/Theme.Holo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.Switches" 
+					 android:label="Views/开关Switches">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--           图形样本            -->
+        <!-- ************************************* -->
+
+        <activity android:name=".graphics.kube.Kube"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/魔方Kube">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Compass" 
+		android:label="Graphics/指南针Compass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.CameraPreview" 
+		android:label="Graphics/摄像头预览CameraPreview"
+                  android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.CompressedTextureActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/压缩纹理Compressed Texture"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.CubeMapActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/立方体贴图Cube Map"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".graphics.FrameBufferObjectActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/帧缓冲区对象Frame Buffer Object"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.GLSurfaceViewActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/立体表面GLSurfaceView"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.GLES20Activity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/OpenGL ES 2.0"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.MatrixPaletteActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/矩阵调色板剥皮Matrix Palette Skinning">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.TranslucentGLSurfaceViewActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/半透明Translucent GLSurfaceView"
+                  android:theme="@style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.TriangleActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/三角纹理Textured Triangle"
+                  android:theme="@style/ThemeCurrentDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.spritetext.SpriteTextActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/雪碧文本Sprite Text"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.TouchRotateActivity"
+                  android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/OpenGL ES/触摸旋转Touch Rotate"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.PolyToPoly" android:label="Graphics/矩形PolyToPoly">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.ScaleToFit" android:label="Graphics/缩放到合适ScaleToFit">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.RoundRects" android:label="Graphics/圆矩形RoundRects">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.ShapeDrawable1"
+                  android:label="Graphics/可绘制Drawable/形状绘制对象ShapeDrawable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.SurfaceViewOverlay"
+                  android:label="Graphics/表面观叠加SurfaceView Overlay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.ShadowCardStack"
+                  android:label="Graphics/暗影卡片堆叠Shadow Card Stack"
+                  android:theme="@android:style/Theme.Material.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.ShadowCardDrag"
+                  android:label="Graphics/暗影卡拖动Shadow Card Drag"
+                  android:theme="@android:style/Theme.Material.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.WindowSurface"
+                  android:label="Graphics/面窗Surface Window">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.TextAlign"
+                  android:hardwareAccelerated="false" 
+				  android:label="Graphics/文本对齐Text Align">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Arcs" 
+		android:label="Graphics/弧Arcs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Patterns" 
+		android:label="Graphics/模式Patterns">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Clipping"
+                  android:hardwareAccelerated="false" 
+				  android:label="Graphics/剪裁Clipping">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Layers" 
+		android:label="Graphics/布局Layers">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.UnicodeChart"
+                  android:hardwareAccelerated="false" 
+				  android:label="Graphics/Unicode的图-UnicodeChart">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.PathFillTypes" 
+		android:label="Graphics/路径填充类型PathFillTypes">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Pictures"
+                  android:hardwareAccelerated="false" 
+				  android:label="Graphics/图片Pictures">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Vertices"
+                  android:hardwareAccelerated="false" android:label="Graphics/顶点Vertices">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.AnimateDrawables"
+                  android:label="Graphics/可绘制动画AnimateDrawables">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.SensorTest" 
+		android:label="Graphics/传感器测试SensorTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.AlphaBitmap" 
+		android:label="Graphics/阿尔法位图AlphaBitmap">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Regions" android:label="Graphics/地区Regions">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Sweep" android:label="Graphics/扫Sweep">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.BitmapMesh" android:label="Graphics/位图网BitmapMesh">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.MeasureText" 
+		android:label="Graphics/测量文本MeasureText">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Typefaces" 
+		android:label="Graphics/字样Typefaces">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.FingerPaint" 
+		android:label="Graphics/手指画FingerPaint">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.ColorMatrixSample" 
+		android:label="Graphics/嘉洛斯ColorMatrix">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.BitmapDecode"
+                  android:hardwareAccelerated="false" 
+				  android:label="Graphics/位图解码BitmapDecode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.ColorFilters" 
+		android:label="Graphics/彩色滤光片ColorFilters">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.CreateBitmap" 
+		android:label="Graphics/创建位图CreateBitmap">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.DrawPoints"
+                  android:hardwareAccelerated="false" 
+				  android:label="Graphics/点Points">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.TouchPaint"
+                  android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+                  android:label="Graphics/触感漆Touch Paint"
+                  android:theme="@style/Theme.Black">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.BitmapPixels" 
+		android:label="Graphics/位图像素BitmapPixels">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.Xfermodes" android:label="Graphics/图标绘制Xfermodes">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.PathEffects" android:label="Graphics/路径效应PathEffects">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.GradientDrawable1"
+                  android:label="Graphics/可绘制Drawable/渐变绘制对象GradientDrawable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".graphics.PurgeableBitmap"
+                  android:label="Graphics/可清除位图PurgeableBitmap/非可吹扫NonPurgeable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity-alias android:name="Purgeable" 
+		android:label="Graphics/可清除位图PurgeableBitmap/吹出Purgeable"
+                        android:targetActivity=".graphics.PurgeableBitmap">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity android:name=".graphics.DensityActivity" 
+		android:label="Graphics/密度Density">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--             媒体的样本             -->
+        <!-- ************************************* -->
+
+        <activity android:name=".media.MediaPlayerDemo" 
+		android:label="Media/媒体播放器MediaPlayer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".media.MediaPlayerDemo_Audio" 
+		android:label="Media/媒体播放器MediaPlayer">
+            <intent-filter>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".media.MediaPlayerDemo_Video" 
+		android:label="Media/媒体播放器MediaPlayer">
+            <intent-filter>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".media.VideoViewDemo" 
+		android:label="Media/VideoView演示VideoViewDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".media.AudioFxDemo" 
+		android:label="Media/Fx的音频AudioFx">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".media.projection.MediaProjectionDemo"
+                  android:label="Media/媒体投影MediaProjection">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--      应用程序的小部件包样品          -->
+        <!-- ************************************* -->
+
+        <receiver android:name=".appwidget.ExampleAppWidgetProvider">
+            <meta-data android:name="android.appwidget.provider"
+                       android:resource="@xml/appwidget_provider"/>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".appwidget.ExampleAppWidgetConfigure">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".appwidget.ExampleBroadcastReceiver" android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.ACTION_TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.ACTION_TIME"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- ************************************* -->
+        <!--             其他的样品           -->
+        <!-- ************************************* -->
+
+        <activity android:name=".nfc.ForegroundDispatch" 
+		android:label="NFC/前景调度ForegroundDispatch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".nfc.TechFilter" android:label="NFC/过滤技术TechFilter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+
+            <!-- 添加一个技术过滤 -->
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED"/>
+            </intent-filter>
+
+            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
+                       android:resource="@xml/filter_nfc"
+            />
+        </activity>
+
+        <activity android:name=".nfc.ForegroundNdefPush" 
+		android:label="NFC/前台NDEF推送ForegroundNdefPush">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".security.KeyStoreUsage" 
+		android:label="安全Security/密钥库KeyStore"
+                  android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+    <instrumentation android:name=".app.LocalSampleInstrumentation"
+                     android:label="Local Sample"
+                     android:targetPackage="com.example.android.apis"/>
+
+</manifest>
