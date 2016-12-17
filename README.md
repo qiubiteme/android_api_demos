@@ -10,7 +10,7 @@ ApiDemo非常全面的介绍了Android开发中常见的Api使用方式。比如
 ![p1](https://raw.githubusercontent.com/MaxQiuYang/android_api_demos/d4516b23bed4519532a50020cef056870cbc183f/pic/Screenshot_2016-12-17-14-02-32-682_com.example.an.png)
 ####Animation
 #####主要演示了属性动画的特点和使用方法。
-![p2]()
+![p2](https://raw.githubusercontent.com/MaxQiuYang/android_api_demos/d4516b23bed4519532a50020cef056870cbc183f/pic/Screenshot_2016-12-17-14-10-49-075_com.example.an.png)
 ####App
 #####展示了包括ActionBar、Activity、对话框、fragment、serivice、notification、menue等常见类的使用方法。每一行里面又包含了很多更细节的东西。
 ![p3]()
